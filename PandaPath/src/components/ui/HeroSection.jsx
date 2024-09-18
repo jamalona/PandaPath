@@ -4,7 +4,7 @@ import videoBg from '../../assets/videos/hero.mp4'
 
 const HeroSection = () => {
   return (
-    <div className="relative w-screen h-[60vh] overflow-hidden">
+    <div className="relative w-screen h-[63vh] overflow-hidden">
       <video autoPlay muted loop src={videoBg} className="absolute inset-0 w-full h-full object-cover"/>
       
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-white">
