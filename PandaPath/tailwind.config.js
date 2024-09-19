@@ -11,6 +11,9 @@ export default {
         '200px': '200px',
         '600px': '600px',
       },
+      width:{
+        '400':'450px',
+      },
       maxWidth: {
         '102': '102vw'
 
@@ -26,6 +29,9 @@ export default {
         'inner-custom': 'inset 0px 4px 0px 0px #F4F4F4'
 
       },
+      height:{
+        '450': '450px',
+      }
 
     },
   },

@@ -19,8 +19,8 @@ const Navbar = () => {
         </Link>
       </span>
       <ul className='flex  space-x-6'>
-        <li className='pb-2 hover:text-red-700 hover:border-b-2 border-red-700'>agents</li>
-        <li className='pb-2 hover:text-red-700 hover:border-b-2 border-red-700'>Login</li>
+        <li className='pb-2 hover:border-b-2 border-slate-950'>agents</li>
+        <li className='pb-2  hover:border-b-2 border-slate-950'>Login</li>
       </ul>
 
     </nav>

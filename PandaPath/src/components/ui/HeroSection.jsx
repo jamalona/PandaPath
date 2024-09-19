@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-white">
         <p className="text-center text-2xl mb-4">Tailor Your China Adventure with Local Experts</p>
         <h1 className="mb-4 text-[9vw]">EXPLORE CHINA</h1>
-        <button className="bg-red-800 text-white text-2xl px-3 py-14  rounded-full ">Plan Your Trip</button>
+        <button className="bg-transparent border-black border-2 backdrop-blur-sm text-white text-2xl px-3 py-14 shadow-2xl rounded-full hover:bg-slate-950 hover:shadow-lg">Plan Your Trip</button>
       </div>
     </div>
   )

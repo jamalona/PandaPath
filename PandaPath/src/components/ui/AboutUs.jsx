@@ -32,13 +32,13 @@ const AboutUs = () => {
 
         <div className="grid grid-cols-2 gap-6 items-start p-4">
 
-          <h2 className="col-span-2 text-4xl">
+          <h2 className="col-span-2 text-5xl ml-20">
             About <br /> Us
           </h2>
 
 
-          <div className="w-96 col-start-2 row-start-2 justify-self-center">
-            <img src={tourist} className="rounded-3xl" alt="Tourist" />
+          <div className="w-400 col-start-2 row-start-2 justify-self-center">
+            <img src={tourist} className="rounded-3xl -mt-8" alt="Tourist" />
             <p className="text-gray-500 mt-2">
               At PandaPath, we believe that every journey is an opportunity for
               adventure, discovery, and unforgettable experiences.
@@ -46,8 +46,8 @@ const AboutUs = () => {
           </div>
 
 
-          <div className="w-72 col-start-1 row-start-3 self-end justify-self-center">
-            <img src={aboutpic} className="rounded-3xl" alt="About Us" />
+          <div className="w-96 col-start-1 row-start-3 self-end justify-self-center">
+            <img src={aboutpic} className="rounded-3xl -mt-8" alt="About Us" />
           </div>
         </div>
 
