@@ -20,7 +20,7 @@ const Traveldeets = () => {
 
   return (
     <>
-      <div className="w-4/5 ml-auto mr-auto pb-10 pl-10 pr-10 border-2 pt-5 rounded-xl mb-10">
+      <div className="w-4/5 ml-auto mr-auto pb-10 pl-10 pr-10 border-2 pt-5 rounded-xl mb-10 shadow-xl">
         {/* Travel Date */}
         <div className="mb-6">
           <label className="block text-2xl font-semibold mb-2">When do you want to travel?</label>

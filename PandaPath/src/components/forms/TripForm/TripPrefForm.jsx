@@ -3,14 +3,16 @@ import { choices } from "../../../data/preferenceData"
 import Traveldeets from "../../ui/traveldeets";
 import BudgetSlider from "../../ui/budget";
 
+
 const TripPref = () => {
   return (
     <>
-      <form className="w-8/12 ml-auto mr-auto mt-20 pt-10 pb-20 h-fit bg-white">
+    <div className="w-full bg-white">
+      <form className="w-8/12 ml-auto mr-auto mt-20 pt-10 pb-20 h-fit border shadow-xl">
 
         {choices.map((section, sectionIndex) => (
 
-          <div key={sectionIndex} className="mb-20 ml-auto mr-auto w-4/5 pl-10 pr-10 border-2 pt-5 rounded-xl">
+          <div key={sectionIndex} className="mb-20 ml-auto mr-auto w-4/5 pl-10 pr-10 border-2 pt-5 rounded-xl shadow-xl">
             <h3 className="text-2xl">{section.part}</h3>
             <p className="text-lg">{section.note}</p>
             <div className="flex w-full items-center flex-wrap mx-5   justify-between">
@@ -54,6 +56,7 @@ const TripPref = () => {
 
 
       </form>
+      </div>
     </>
   );
 };

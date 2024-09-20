@@ -1,19 +1,19 @@
 import { useState } from "react"
 
 const ContactDetails = () => {
-  const [formData, setData] = useState({
-    firstName:"",
-    lastName:"",
-    email:"",
+  // const [formData, setData] = useState({
+  //   firstName:"",
+  //   lastName:"",
+  //   email:"",
 
 
-  })
+  // })
 
   return (
     <>
 
-      <form className="w-7/12 mx-auto mt-20 pt-10 pb-20 min-h-lvh bg-white shadow-md rounded-lg">
-        <div className="mb-20 w-4/5 mx-auto px-10 border-2 pt-5 pb-5 rounded-xl ">
+      <form className="w-7/12 mx-auto mt-20 pt-10 pb-20 min-h-lvh bg-white shadow-xl  rounded-lg">
+        <div className="mb-20 w-4/5 mx-auto px-10 border-2 pt-5 pb-5 rounded-xl shadow-xl ">
           <h3 className="text-4xl mb-10 font-medium text-center">How can we best reach you?</h3>
 
           <fieldset className="space-y-8 w-10/12 ml-auto mr-auto">
