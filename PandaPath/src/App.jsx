@@ -5,6 +5,7 @@ import HomePage from './pages/Homepage';
 import Footer from './components/ui/Footer';
 import Itinerary1 from './pages/Itinerary1';
 import Itinerary2 from './pages/Itinerary2';
+import LoginForm from './components/forms/LoginForm'
 
 
 
@@ -17,19 +18,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-      </Routes>
-      <Routes>
+        <Route path="/Login" element={<LoginForm />} />
         <Route path="/Expedition" element={<Itinerary1 />} />
-      </Routes>
-      <Routes>
         <Route path="/Guizhou" element={<Itinerary2 />} />
       </Routes>
-
-
       <Footer />
-
     </Router>
-  )
+  );
+
 }
 
 export default App
