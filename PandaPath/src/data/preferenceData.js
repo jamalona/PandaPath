@@ -1,11 +1,11 @@
 import beijingImg from '../assets/images/tiantianpark.jpg'
 import SouthImg from '../assets/images/tsokaSouth.jpg'
-import Northimg from '../assets/images/'
-import shanghaiImg from '../assets/images/'
-import KongImg from '../assets/images/'
-import tibetImg from '../assets/images/'
-import tibetIm from '../assets/images/'
-import shanghaiIg from '../assets/images/'
+import NorthImg from '../assets/images/china-Xian.jpg'
+import shanghaiImg from '../assets/images/shanghai.jpg'
+import KongImg from '../assets/images/hongKong.jpg'
+import tibetImg from '../assets/images/tibet.jpg'
+import tourguide from '../assets/images/tourguide.jpg'
+import driving from '../assets/images/driving.jpg'
 import shanghaiIg from '../assets/images/'
 
 
@@ -23,19 +23,19 @@ export const itinerary = [
       title: "Southwestern China (Chengdu, Yangshou, Guilin, Kunming)",
     },
     {
-      imglink: 2,
+      imglink: NorthImg,
       title: "Xi'an and the Northwest Region",
     },
     {
-      imglink: 2,
+      imglink: shanghaiImg,
       title: "The City of Shanghai",
     },
     {
-      imglink: 2,
+      imglink: KongImg,
       title: "Hong Kong & the Pearl River Delta",
     },
     {
-      imglink: 2,
+      imglink: tibetImg,
       title: "Tibetan Highlands",
     },
     ]
@@ -43,15 +43,15 @@ export const itinerary = [
   {
     section: "travelstyle",
     style: [{
-      imglink: 2,
+      imglink: tourguide,
       title: "Private tour with dedicated guide",
     },
     {
-      imglink: 2,
+      imglink: driving,
       title: "Private transfer, guide for day trips"
     },
     {
-      imglink: 2,
+      imglink: driving,
       title: "Self-drive adventure",
     },
     {
@@ -63,7 +63,7 @@ export const itinerary = [
   {
     section: "experience",
     experience: [{
-      imglink: 2,
+      imglink: tourguide,
       title: "Cultural explorations",
     },
     {

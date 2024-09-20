@@ -26,7 +26,7 @@ const ItenaryList = () => {
                   <p className='mt-5'>{itenary.days}</p>
                   <p>{itenary.price}</p>
 
-                  <button className='text-2xl absolute left-32 bottom-5 z-50 items-center pl-5 pr-5 pt-1 pb-1 border-black border-2 rounded-lg hover:bg-slate-950 hover:text-white'>Request</button>
+                  <button className='text-2xl absolute left-32 bottom-5 z-40 items-center pl-5 pr-5 pt-1 pb-1 border-black border-2 rounded-lg hover:bg-slate-950 hover:text-white'>Request</button>
                 </div>
               </Link>
             </div>
