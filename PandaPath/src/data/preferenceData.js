@@ -7,7 +7,7 @@ import tibetImg from '../assets/images/tibet.jpg'
 import tourguide from '../assets/images/tourguide.jpg'
 import dayguide from '../assets/images/dayguide.jpg'
 import driving from '../assets/images/driving.jpg'
-import noguide from '../assets/images/'
+import noguide from '../assets/images/hotel.jpg'
 import culture from '../assets/images/culture.jpg'
 import nature from '../assets/images/nature.jpg'
 import wildlife from '../assets/images/wildlife.jpg'
@@ -18,10 +18,11 @@ import adventure from '../assets/images/adventure.jpg'
 
 
 
-export const itinerary = [
+export const choices = [
   {
-    section: "regions",
-    location: [{
+    part: "Which regions would you like to visit?",
+    note:"Select as many as you wish.",
+    card: [{
       imglink: beijingImg,
       title: "Beijing and Northern China",
     },
@@ -48,8 +49,9 @@ export const itinerary = [
     ]
   },
   {
-    section: "travelstyle",
-    style: [{
+    part: "What's your preferred travel style?",
+    note:"please select one",
+    card: [{
       imglink: tourguide,
       title: "Private tour with dedicated guide",
     },
@@ -68,8 +70,9 @@ export const itinerary = [
     ]
   },
   {
-    section: "experience",
-    experience: [{
+    part: "What experiences are you looking for in China?",
+    note:"Select as many as you wish.",
+    card: [{
       imglink: culture,
       title: "Cultural explorations",
     },

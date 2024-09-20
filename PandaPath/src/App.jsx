@@ -6,6 +6,7 @@ import Footer from './components/ui/Footer';
 import Itinerary1 from './pages/Itinerary1';
 import Itinerary2 from './pages/Itinerary2';
 import LoginForm from './components/forms/LoginForm'
+import TripForm from './pages/TripForm';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Login" element={<LoginForm />} />
+        <Route path="/tripform" element={<TripForm/>} />
         <Route path="/Expedition" element={<Itinerary1 />} />
         <Route path="/Guizhou" element={<Itinerary2 />} />
       </Routes>
