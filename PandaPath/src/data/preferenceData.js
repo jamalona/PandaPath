@@ -5,8 +5,15 @@ import shanghaiImg from '../assets/images/shanghai.jpg'
 import KongImg from '../assets/images/hongKong.jpg'
 import tibetImg from '../assets/images/tibet.jpg'
 import tourguide from '../assets/images/tourguide.jpg'
+import dayguide from '../assets/images/dayguide.jpg'
 import driving from '../assets/images/driving.jpg'
-import shanghaiIg from '../assets/images/'
+import noguide from '../assets/images/'
+import culture from '../assets/images/culture.jpg'
+import nature from '../assets/images/nature.jpg'
+import wildlife from '../assets/images/wildlife.jpg'
+import relaxation from '../assets/images/relaxation.jpg'
+import luxury from '../assets/images/luxury.webp'
+import adventure from '../assets/images/adventure.jpg'
 
 
 
@@ -47,7 +54,7 @@ export const itinerary = [
       title: "Private tour with dedicated guide",
     },
     {
-      imglink: driving,
+      imglink: dayguide,
       title: "Private transfer, guide for day trips"
     },
     {
@@ -55,7 +62,7 @@ export const itinerary = [
       title: "Self-drive adventure",
     },
     {
-      imglink: 2,
+      imglink: noguide,
       title: "Pre-arranged Hotels/Transfer, no guide",
     },
     ]
@@ -63,31 +70,28 @@ export const itinerary = [
   {
     section: "experience",
     experience: [{
-      imglink: tourguide,
+      imglink: culture,
       title: "Cultural explorations",
     },
     {
-      imglink: 2,
+      imglink: nature,
       title: "Natural scenery and landscapes",
     },
     {
-      imglink: 2,
+      imglink: wildlife,
       title: "Wildlife and animal encounters",
     },
     {
-      imglink: 2,
+      imglink: relaxation,
       title: "Relaxation & leisure",
     },
     {
-      imglink: 2,
+      imglink: luxury,
       title: "High-end luxury experiences",
     },
+
     {
-      imglink: 2,
-      title: "Exclusive luxury getaways",
-    },
-    {
-      imglink: 2,
+      imglink: adventure,
       title: "Soft adventure & exploration",
     },
     ]
