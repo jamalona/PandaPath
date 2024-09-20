@@ -17,17 +17,21 @@ const ItenaryList = () => {
         <div className='flex w-4/5 ml-auto mr-auto flex-wrap'>
           {Itineraries.map((itenary, index) => (
 
-            <div key={index} className='w-1/3 mb-10 relative h-450 group min-w-[31%]'>
+            <div key={index} className='w-1/3 mb-10 relative h-450 group min-w-[31%] '>
               <Link to={itenary.path} key={index} onClick={handleLogoClick}>
-                <img src={itenary.link} className=' w-96 h-60 -mb-8  transition-opacity duration-300 group-hover:opacity-70' />
+                <img src={itenary.link} className=' w-96 h-60 -mb-8  transition-opacity duration-300 group-hover:opacity-70 rounded-t-md' />
                 {/* Text Container */}
                 <div className='bg-white w-96 p-5 h-56 shadow-lg rounded-t-2xl absolute bottom-0 hover:h-60 transition-all duration-300 '>
                   <h2 className='text-xl w-80'>{itenary.title}</h2>
                   <p className='mt-5'>{itenary.days}</p>
                   <p>{itenary.price}</p>
 
-                  <button className='text-2xl absolute left-32 bottom-5 z-40 items-center pl-5 pr-5 pt-1 pb-1 border-black border-2 rounded-lg hover:bg-slate-950 hover:text-white'>Request</button>
+                  
+                  
                 </div>
+              </Link>
+              <Link to="/tripform" onClick={handleLogoClick}>
+              <button className='text-2xl absolute left-28 bottom-5 z-40 items-center ml-2 pl-5 pr-5 pt-1 pb-1 border-black border-2 rounded-lg hover:bg-slate-950 hover:text-white'>Request</button>
               </Link>
             </div>
 

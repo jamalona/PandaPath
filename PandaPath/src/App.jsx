@@ -7,6 +7,7 @@ import Itinerary1 from './pages/Itinerary1';
 import Itinerary2 from './pages/Itinerary2';
 import LoginForm from './components/forms/LoginForm'
 import TripForm from './pages/TripForm';
+import ContactDetails from './components/forms/TripForm/ContactDetails';
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/tripform" element={<TripForm/>} />
         <Route path="/Expedition" element={<Itinerary1 />} />
         <Route path="/Guizhou" element={<Itinerary2 />} />
+        <Route path="/details" element={<ContactDetails/>} />
       </Routes>
       <Footer />
     </Router>

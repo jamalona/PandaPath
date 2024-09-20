@@ -36,7 +36,7 @@ const LoginForm = ({ addEvent }) => {
             value={inputs.email}
             onChange={handleChange}
             required
-            className='p-3 border-slate-900 border-2 w-full rounded-xl a text-xl'
+            className='p-3 border-slate-900 border w-full rounded-xl a text-xl'
           />
         </div>
 
@@ -50,11 +50,11 @@ const LoginForm = ({ addEvent }) => {
             value={inputs.password}
             onChange={handleChange}
             required
-            className='p-3 border-slate-900 border-2 w-full rounded-xl text-xl '
+            className='p-3 border-slate-900 border w-full rounded-xl text-xl '
           />
         </div>
 
-        <button type="submit" className='text-2xl p-3 text-white border-2 bg-slate-900 rounded-2xl w-full  '>Sign In</button>
+        <button type="submit" className='text-2xl p-3 text-white border bg-slate-900 rounded-2xl w-full  '>Sign In</button>
       </fieldset>
     </form>
 
