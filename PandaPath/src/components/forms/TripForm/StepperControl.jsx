@@ -13,7 +13,7 @@ const StepperControl = ({handleClick, currentStep, steps}) =>{
     <button 
     onClick={()=>handleClick("next")}
     className="bg-white border border-black py-2 px-4 text-2xl rounded-xl hover:bg-black hover:text-white ">
-      {currentStep == steps.length -1? "Send request": "Next"}
+      {currentStep === steps.length? "Send request": "Next"}
       </button>
 
     </div>

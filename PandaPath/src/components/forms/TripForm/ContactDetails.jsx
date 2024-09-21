@@ -28,7 +28,7 @@ const ContactDetails = ({ addEvent }) => {
       {/* <div className="w-full bg-white">
         <div className="w-7/12 mx-auto  mt-20 pt-10 pb-20 h-fit border shadow-xl  min-h-lvh   rounded-lg" > */}
 
-          <div className="mb-20 w-4/5 mx-auto px-10 border-2 pt-5 pb-5 rounded-xl shadow-xl ">
+          <div className="mb-20  w-4/5 mx-auto px-10 border-2 pt-5 pb-10 rounded-xl shadow-xl mt-20">
             <h3 className="text-4xl mb-10 font-medium text-center">How can we best reach you?</h3>
 
             <fieldset className="space-y-8 w-10/12 ml-auto mr-auto">
