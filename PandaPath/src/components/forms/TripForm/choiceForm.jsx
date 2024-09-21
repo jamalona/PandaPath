@@ -43,7 +43,7 @@ const ChoiceForm = () => {
   return (
     <>
       {choices.map((section, sectionIndex) => (
-        <div key={sectionIndex} className="mb-20 ml-auto mr-auto w-4/5 pl-10 pr-10 border-2 pt-5 rounded-xl shadow-xl">
+        <div key={sectionIndex} className="mb-20 ml-auto mr-auto w-4/5 pl-10 pr-10 border-2 pt-5 rounded-xl mt-20 shadow-xl">
           <h3 className="text-2xl ml-2">{section.part}</h3>
           <p className="text-lg ml-2">{section.note}</p>
           <div className="flex w-full items-center flex-wrap justify-between">

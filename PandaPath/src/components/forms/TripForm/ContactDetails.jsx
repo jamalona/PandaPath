@@ -17,16 +17,16 @@ const ContactDetails = ({ addEvent }) => {
     ))
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    addEvent(formData)
-    setData({ firstName: "", lastName: "", email: "", countryCode: "", phoneNumber: "", additionalInfo: "", })
-  }
+  // const handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   addEvent(formData)
+  //   setData({ firstName: "", lastName: "", email: "", countryCode: "", phoneNumber: "", additionalInfo: "", })
+  // }
 
   return (
     <>
-      <div className="w-full bg-white">
-        <form onSubmit={handleSubmit} className="w-7/12 mx-auto  mt-20 pt-10 pb-20 h-fit border shadow-xl  min-h-lvh   rounded-lg" >
+      {/* <div className="w-full bg-white">
+        <div className="w-7/12 mx-auto  mt-20 pt-10 pb-20 h-fit border shadow-xl  min-h-lvh   rounded-lg" > */}
 
           <div className="mb-20 w-4/5 mx-auto px-10 border-2 pt-5 pb-5 rounded-xl shadow-xl ">
             <h3 className="text-4xl mb-10 font-medium text-center">How can we best reach you?</h3>
@@ -105,8 +105,8 @@ const ContactDetails = ({ addEvent }) => {
               </div>
             </fieldset>
           </div>
-        </form>
-      </div>
+        {/* </form>
+      </div> */}
 
 
     </>
