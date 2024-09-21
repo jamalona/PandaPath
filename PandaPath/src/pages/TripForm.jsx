@@ -40,6 +40,7 @@ const TripForm = () => {
     // Ensure new step is within valid range
     if (newStep > 0 && newStep <= steps.length) {
       setCurrentStep(newStep);
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   };
 

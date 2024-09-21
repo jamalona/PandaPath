@@ -1,14 +1,13 @@
-import { Link, useLocation} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Logo from '../../assets/images/PandaPathLogo.jpg'
 //link on log in to login form
 const Navbar = () => {
   
-    const location = useLocation();
+  
 
     const handleLogoClick = () => {
-      if (location.pathname === '/' || location.pathname === '/Login' ) {
         window.scrollTo({ top: 0, behavior: 'instant' });
-      }
+      
     };
     return (
 
