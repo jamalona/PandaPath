@@ -16,7 +16,7 @@ const HeroSection = () => {
         <h1 className="mb-4 text-[9vw]">EXPLORE CHINA</h1>
 
         <Link to="/tripform" onClick={handleClick}>
-        <button className="bg-transparent border-black border-2 backdrop-blur-sm text-white text-2xl px-3 py-14 shadow-2xl rounded-full hover:bg-slate-950 hover:shadow-lg">Plan Your Trip</button>
+        <button className="bg-black opacity-70 border-white border-2 backdrop-blur-2xl text-white text-2xl px-3 py-14 shadow-2xl rounded-full hover:bg-slate-950 hover:border-black hover:opacity-100">Plan Your Trip</button>
         </Link>
       </div>
     </div>

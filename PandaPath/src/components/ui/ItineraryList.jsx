@@ -14,7 +14,7 @@ const ItenaryList = () => {
       <div className="w-screen ">
         <h1 className="text-4xl text-center pb-9 mt-6">Popular Itineraries</h1>
 
-        <div className='flex w-4/5 ml-auto mr-auto flex-wrap'>
+        <div className='flex w-3/4 ml-auto mr-auto flex-wrap'>
           {Itineraries.map((itenary, index) => (
 
             <div key={index} className='w-1/3 mb-10 relative h-450 group min-w-[31%] '>

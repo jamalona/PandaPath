@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const BudgetSlider = () => {
 
-  const [budget, setBudget] = useState(4000);
+  const [budget, setBudget] = useState(3000);
 
  
-  const minBudget = 2000;
+  const minBudget = 1000;
   const maxBudget = 12000;
 
   return (
@@ -13,8 +13,8 @@ const BudgetSlider = () => {
       <h3 className="text-2xl mb-4">What are you looking to spend on your trip?</h3>
 
       {/* Budget range label */}
-      <div className="flex justify-between text-lg mb-4">
-        <span>£2,000</span>
+      <div className="flex justify-between mb-4">
+        <span>£1,000</span>
         <span>More than £12,000</span>
       </div>
 
@@ -27,11 +27,11 @@ const BudgetSlider = () => {
           step={500}
           value={budget}
           onChange={(e) => setBudget(Number(e.target.value))}
-          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb"
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer  "
         />
 
         {/* Dynamically display selected budget */}
-        <div className="mt-4 text-xl text-center">
+        <div className="mt-4 text-xl text-center pb-4">
           £{budget.toLocaleString()} - £{(budget + 500).toLocaleString()} per person
         </div>
       </div>

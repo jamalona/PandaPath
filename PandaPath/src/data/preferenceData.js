@@ -22,6 +22,7 @@ export const choices = [
   {
     part: "Which regions would you like to visit?",
     note:"Select as many as you wish.",
+    name:"regions",
     card: [{
       imglink: beijingImg,
       title: "Beijing and Northern China",
@@ -51,6 +52,7 @@ export const choices = [
   {
     part: "What's your preferred travel style?",
     note:"please select one",
+    name:"travelStyle",
     card: [{
       imglink: tourguide,
       title: "Private tour with dedicated guide",
@@ -72,6 +74,7 @@ export const choices = [
   {
     part: "What experiences are you looking for in China?",
     note:"Select as many as you wish.",
+    name:'interest',
     card: [{
       imglink: culture,
       title: "Cultural explorations",
