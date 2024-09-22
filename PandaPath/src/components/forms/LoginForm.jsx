@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types'; 
 import town from '../../assets/images/culture.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../../supabaseClient';
 
-const LoginForm = (/*{ addEvent }*/) => {
+
+const LoginForm = ({setToken}) => {
+  let navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
-  console.log(formData)
+
+
   // const login = async () => {
   //   await supabase.auth.signIn({
   //     provider: "google"
@@ -34,7 +37,12 @@ const LoginForm = (/*{ addEvent }*/) => {
       email: formData.email,
       password: formData.password,
     })
-    setFormData({ email: "", password: "" }); // Clear both fields after submission
+    if(error) throw error
+    // setFormData({ email: "", password: "" }); // Clear both fields after submission
+    console.log(data)
+    setToken(data)
+    navigate('/')
+    
 
   } catch (error){
     alert(error)
