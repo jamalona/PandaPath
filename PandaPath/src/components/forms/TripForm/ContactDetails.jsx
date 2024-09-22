@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const ContactDetails = ({ addEvent }) => {
+const ContactDetails = () => {
   const [formData, setData] = useState({
     firstName: "",
     lastName: "",

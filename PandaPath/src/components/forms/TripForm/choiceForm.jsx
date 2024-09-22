@@ -60,6 +60,7 @@ const ChoiceForm = () => {
                       checked={formData.travelStyle === choice.title}
                       onChange={handleChange}
                       className="peer absolute top-5 right-5"
+                      required
                     />
                   ) : (
                     <input
@@ -73,6 +74,7 @@ const ChoiceForm = () => {
                           : formData.interest.includes(choice.title)
                       }
                       onChange={handleChange}
+                      required
                       className="peer absolute top-5 right-5"
                     />
                   )}

@@ -1,5 +1,4 @@
 const StepperControl = ({handleClick, currentStep, steps}) =>{
-  
   return (
     <div className="flex justify-around">
 

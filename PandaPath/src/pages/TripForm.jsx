@@ -12,6 +12,21 @@ const TripForm = () => {
   const [finalData, setFinalData] = useState([]);
 
   const steps = ["Trip preferences", "Group information", "Final details"];
+  const { data, error } = await supabase.from('booking_form').insert([
+    {
+      region_to_visit: formData.regionToVisit,   // Map your form fields to table columns
+      travel_style: formData.travelStyle,
+      interest: formData.interest,
+                 
+      contact_email: userData.contactEmail,
+      region_to_visit: userData.regionToVisit,   // Map your form fields to table columns
+      travel_style: userData.travelStyle,
+      interest: userData.interest,
+      group_size: userData.groupSize,            // Example fields
+      contact_email: userData.contactEmail,
+    },
+  ]);
+
 
   // Make sure to use currentStep here
   const displayStep = () => {
