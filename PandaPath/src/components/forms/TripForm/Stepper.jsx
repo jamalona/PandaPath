@@ -47,22 +47,23 @@ const Stepper = ({ steps, currentStep }) => {
   }
 
   useEffect(() => {
-    const stepsState = steps.map((step, index) =>
-      Object.assign(
-        {},
-        {
-          description: step,
-          completed: false,
-          highlighted: index == 0 ? true : false,
-          selected: index == 0 ? true : false
-        }
-      )
-    );
-    stepRef.current = stepsState
-    const current = updateStep(currentStep - 1, stepRef.current)
-    setNewStep(current)
-
-  }, [steps, currentStep])
+    // Generate initial steps state only once
+    if (!stepRef.current) {
+      const stepsState = steps.map((step, index) => ({
+        description: step,
+        completed: false,
+        highlighted: index === 0,
+        selected: index === 0,
+      }));
+      stepRef.current = stepsState;
+    }
+  
+    // Update steps based on the current step
+    const current = updateStep(currentStep - 1, stepRef.current);
+    setNewStep(current);
+  
+  }, [currentStep]);  // Only re-run when currentStep changes
+  
 
   const displaySteps = newStep.map((step, index) => {
     return (

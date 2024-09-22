@@ -3,46 +3,69 @@ import { choices } from "../../../data/preferenceData";
 
 const ChoiceForm = ({ formData, setFormData }) => {
 
+  // const handleChange = (e) => {
+  //   const { name, type, value, checked } = e.target;
+  
+  //   setFormData((prevFormData) => {
+  //     const updatedRegionToVisit = prevFormData.regionToVisit;
+  //     const updatedInterest = prevFormData.interest;
+  
+  //     if (type === "checkbox") {
+  //       if (name === "regions") {
+  //         const newRegionToVisit = checked
+  //           ? [...updatedRegionToVisit, value]
+  //           : updatedRegionToVisit.filter((item) => item !== value);
+  
+  //         return {
+  //           ...prevFormData,
+  //           regionToVisit: newRegionToVisit,
+  //         };
+  //       } else if (name === "interest") {
+  //         const newInterest = checked
+  //           ? [...updatedInterest, value]
+  //           : updatedInterest.filter((item) => item !== value);
+  
+  //         return {
+  //           ...prevFormData,
+  //           interest: newInterest,
+  //         };
+  //       }
+  //     }
+  
+  //     if (type === "radio" && name === "travelStyle") {
+  //       // Only update if the value actually changes
+  //       if (prevFormData.travelStyle !== value) {
+  //         return {
+  //           ...prevFormData,
+  //           travelStyle: value,
+  //         };
+  //       }
+  //     }
+  
+  //     return prevFormData;
+  //   });
+  // };
+  
   const handleChange = (e) => {
     const { name, type, value, checked } = e.target;
   
     setFormData((prevFormData) => {
-      const updatedRegionToVisit = prevFormData.regionToVisit || [];
-      const updatedInterest = prevFormData.interest || [];
-  
+      let updatedFormData = { ...prevFormData };
       if (type === "checkbox") {
         if (name === "regions") {
-          const newRegionToVisit = checked
-            ? [...updatedRegionToVisit, value]
-            : updatedRegionToVisit.filter((item) => item !== value);
-  
-          return {
-            ...prevFormData,
-              regionToVisit: newRegionToVisit,
-            
-          };
-        } else if (name === "interest") {
-          const newInterest = checked
-            ? [...updatedInterest, value]
-            : updatedInterest.filter((item) => item !== value);
-  
-          return {
-            ...prevFormData,
-              interest: newInterest,
-            };
+          if (checked && !updatedFormData.regionToVisit.includes(value)) {
+            updatedFormData.regionToVisit.push(value);
+          } else if (!checked) {
+            updatedFormData.regionToVisit = updatedFormData.regionToVisit.filter(item => item !== value);
           }
         }
-      
-  
-      if (type === "radio" && name === "travelStyle") {
-        return {
-          ...prevFormData,
-            travelStyle: value,
-          
-        };
+        // Do similar logic for 'interest'...
+      } else if (type === "radio" && name === "travelStyle") {
+        if (updatedFormData.travelStyle !== value) {
+          updatedFormData.travelStyle = value;
+        }
       }
-  
-      return prevFormData;
+      return updatedFormData;
     });
   };
   
@@ -78,8 +101,8 @@ const ChoiceForm = ({ formData, setFormData }) => {
                       onChange={handleChange}
                       checked={
                         section.name === "regions"
-                          ? formData.regionToVisit.includes(choice.title)
-                          : formData.interest.includes(choice.title)
+                          ? formData.regionToVisit?.includes(choice.title)
+                          : formData.interest?.includes(choice.title)
                       }
                       required
                       className="peer absolute top-5 right-5"

@@ -5,7 +5,7 @@ import Stepper from "../components/forms/TripForm/Stepper";
 import StepperControl from "../components/forms/TripForm/StepperControl";
 import GroupInfo from "../components/forms/TripForm/groupInfo";
 import { useState } from "react";
-import { supabase } from "../supabaseClient";
+// import { supabase } from "../supabaseClient";
 
 const TripForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -37,8 +37,8 @@ const TripForm = () => {
   const steps = ["Trip preferences", "Group information", "Final details"];
 
 
-   {/* Country Code and Phone..note: just a substitute. remember to use dropdown list for phone codes.*/}
-
+   
+ // Country Code and Phone..note: just a substitute. Remember to use dropdown list for phone codes.
 
   // Make sure to use currentStep here
   const displayStep = () => {
@@ -62,53 +62,66 @@ const TripForm = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevents the form from submitting/reloading the page
-  
-    //Flatten the formData for Supabase
-    const dataToInsert = {
-      region_to_visit: formData.tripPreferences.regionToVisit,
-      travel_style: formData.tripPreferences.travelStyle,
-      interest: formData.tripPreferences.interest,
-      budget: formData.groupInfo.budget,
-      start_date: formData.groupInfo.startDate,
-      trip_length: formData.groupInfo.tripLength,
-      adults: formData.groupInfo.adults,
-      children: formData.groupInfo.children,
-      infants: formData.groupInfo.infants,
-      first_name: formData.contactDetails.firstName,
-      last_name: formData.contactDetails.lastName,
-      email: formData.contactDetails.email,
-      country_code: formData.contactDetails.countryCode,
-      phone_number: formData.contactDetails.phoneNumber,
-      additional_info: formData.contactDetails.additionalInfo,
-    };
-  
-    // Insert data into Supabase
-    const { error } = await supabase.from('booking_form').insert([dataToInsert]);
-  
-    if (error) {
-      console.error("Error inserting data:", error.message);
-    } else {
-      console.log("Data successfully inserted");
-    }
-  };
-  
- 
-
-
   const handleClick = (direction) => {
     let newStep = currentStep;
-
-    direction === "next" ? newStep++ : newStep--;
-
-    // Ensure new step is within valid range
+  
+    // Move to the next or previous step
+    if (direction === "next") {
+      if (currentStep === steps.length) {
+        // Trigger form submission on the last step
+        handleSubmit();  // Call handleSubmit directly instead of using requestSubmit
+      } else {
+        newStep++;
+      }
+    } else {
+      newStep--;
+    }
+  
+    // Ensure the step is valid
     if (newStep > 0 && newStep <= steps.length) {
       setCurrentStep(newStep);
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
   };
-
+  
+  const handleSubmit = async (e) => {
+    if (e) e.preventDefault(); // Prevent default form submission
+  
+    if (currentStep === steps.length) {
+      console.log("Submitting form with data:", formData);
+  
+      // Perform form submission logic here (e.g., to Supabase)
+      // Uncomment and implement your form submission here
+  
+      /*
+      const dataToInsert = {
+        region_to_visit: formData.tripPreferences.regionToVisit,
+        travel_style: formData.tripPreferences.travelStyle,
+        interest: formData.tripPreferences.interest,
+        budget: formData.groupInfo.budget,
+        start_date: formData.groupInfo.startDate,
+        trip_length: formData.groupInfo.tripLength,
+        adults: formData.groupInfo.adults,
+        children: formData.groupInfo.children,
+        infants: formData.groupInfo.infants,
+        first_name: formData.contactDetails.firstName,
+        last_name: formData.contactDetails.lastName,
+        email: formData.contactDetails.email,
+        country_code: formData.contactDetails.countryCode,
+        phone_number: formData.contactDetails.phoneNumber,
+        additional_information: formData.contactDetails.additionalInfo,
+      };
+    
+      const { error } = await supabase.from('booking_form').insert([dataToInsert]);
+    
+      if (error) {
+        console.error("Error inserting data:", error.message);
+      } else {
+        console.log("Data successfully inserted");
+      }
+      */
+    }
+  };
   return (
     <>
       <div className="w-full bg-white">

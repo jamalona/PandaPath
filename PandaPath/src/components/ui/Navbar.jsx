@@ -1,5 +1,7 @@
 import { Link} from 'react-router-dom';
 import Logo from '../../assets/images/PandaPathLogo.jpg'
+import { FaCircleUser } from "react-icons/fa6";
+import { FaUserAlt } from "react-icons/fa";
 //link on log in to login form
 const Navbar = () => {
   
@@ -20,7 +22,7 @@ const Navbar = () => {
       <ul className='flex  space-x-6'>
         <li className='pb-2 hover:border-b-2 border-slate-950'>agents</li>
         <Link to="/Login" onClick={handleLogoClick}>
-        <li className='pb-2  hover:border-b-2 border-slate-950'>Login</li>
+        <li className='pb-2   '><button className='border py-2 px-5 rounded-xl hover:bg-gray-300'><FaCircleUser /></button> </li>
         </Link>
       </ul>
 

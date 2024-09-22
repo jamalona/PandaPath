@@ -1,8 +1,10 @@
 import { useState } from 'react';
 // import PropTypes from 'prop-types'; 
 import town from '../../assets/images/culture.jpg'
+import { Link } from 'react-router-dom';
 
-const LoginForm = ({ addEvent }) => {
+
+const LoginForm = (/*{ addEvent }*/) => {
   const [inputs, setInputs] = useState({
     email: "",
     password: ""
@@ -22,12 +24,12 @@ const LoginForm = ({ addEvent }) => {
   return (
     <div className='h-lvh relative pt-32'>
       <img src={town} className='absolute inset-0 w-full h-full object-cover opacity-90 -z-10 '/>
-    <form onSubmit={handleSubmit} className='mt-20 bg-black text-white bg-opacity-30 backdrop-blur-lg min-w-96 w-4/12 ml-auto mr-auto h-4/6 rounded-2xl border border-white'>
-    <h1 className='text-5xl text-center py-20'>Sign in to PandaPath</h1>
+    <form /*onSubmit={handleSubmit}*/ className='mt-20 bg-black text-white bg-opacity-30 backdrop-blur-lg min-w-96 w-4/12 ml-auto mr-auto h-4/6 rounded-2xl border border-white'>
+    <h1 className='text-5xl text-center py-10'>Login</h1>
       <fieldset className='w-4/5 ml-auto mr-auto border-t-4 pt-8 '>
         
         <div className='mb-5'>
-          <label htmlFor="email" className='text-xl'>Email</label><br/>
+          <label htmlFor="email" >Email</label><br/>
           <input
             type='email'
             id='email'
@@ -36,12 +38,12 @@ const LoginForm = ({ addEvent }) => {
             value={inputs.email}
             onChange={handleChange}
             required
-            className='p-3 border-slate-900 border w-full rounded-xl a text-xl text-black'
+            className='p-3 border-slate-900 border w-full rounded-lg a text-xl text-black'
           />
         </div>
 
         <div className='mb-5'>
-          <label htmlFor="password" className='text-xl'>Password</label><br/>
+          <label htmlFor="password" >Password</label><br/>
           <input
             type="password"
             id='password'
@@ -50,11 +52,18 @@ const LoginForm = ({ addEvent }) => {
             value={inputs.password}
             onChange={handleChange}
             required
-            className='p-3 border-slate-900 border w-full rounded-xl text-xl text-black '
+            className='p-3 border-slate-900 border w-full rounded-lg text-xl text-black '
           />
         </div>
 
-        <button type="submit" className='text-2xl p-3 text-white border bg-slate-900 rounded-2xl w-full  '>Sign In</button>
+        <button type="submit" className='text-xl p-3 text-white border bg-slate-800 rounded-xl w-full  '>Login</button>
+
+        <p className='text-center text-gray-300 my-4'>Don't have an account? 
+          <Link to="/Signup">
+          <span className='text-white pl-2'>Signup</span>
+          </Link>
+          </p>
+
       </fieldset>
     </form>
 

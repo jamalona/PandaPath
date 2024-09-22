@@ -8,6 +8,7 @@ import Itinerary2 from './pages/Itinerary2';
 import LoginForm from './components/forms/LoginForm'
 import TripForm from './pages/TripForm';
 import ContactDetails from './components/forms/TripForm/ContactDetails';
+import SignUpForm from './components/forms/signUpForm';
 
 
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Login" element={<LoginForm />} />
+        <Route path="/Signup" element={<SignUpForm />} />
         <Route path="/tripform" element={<TripForm/>} />
         <Route path="/Expedition" element={<Itinerary1 />} />
         <Route path="/Guizhou" element={<Itinerary2 />} />
