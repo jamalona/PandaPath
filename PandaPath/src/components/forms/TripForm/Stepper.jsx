@@ -1,102 +1,89 @@
-import React from "react"
-import { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react";
 
 const Stepper = ({ steps, currentStep }) => {
-  const [newStep, setNewStep] = useState([])
-  const stepRef = useRef();
+  const [newStep, setNewStep] = useState([]);
 
   const updateStep = (stepNumber, steps) => {
-    const newSteps = [...steps]
+    const newSteps = [...steps];
     let count = 0;
+    
     while (count < newSteps.length) {
       if (count === stepNumber) {
         newSteps[count] = {
           ...newSteps[count],
           highlighted: true,
           selected: true,
-          completed: false
-
+          completed: false,
         };
-        count++
-      }
-      else if (count < stepNumber) {
+      } else if (count < stepNumber) {
         newSteps[count] = {
           ...newSteps[count],
           highlighted: false,
           selected: true,
-          completed: true
-
+          completed: true,
         };
-        count++
-
-      }
-      else {
+      } else {
         newSteps[count] = {
           ...newSteps[count],
           highlighted: false,
           selected: false,
-          completed: false
-
+          completed: false,
         };
-        count++
-
       }
+      count++;
     }
-    return newSteps
-
-  }
+    
+    return newSteps;
+  };
 
   useEffect(() => {
-    // Generate initial steps state only once
-    if (!stepRef.current) {
-      const stepsState = steps.map((step, index) => ({
-        description: step,
-        completed: false,
-        highlighted: index === 0,
-        selected: index === 0,
-      }));
-      stepRef.current = stepsState;
-    }
-  
-    // Update steps based on the current step
-    const current = updateStep(currentStep - 1, stepRef.current);
+    // Initialize the step state
+    const stepsState = steps.map((step, index) => ({
+      description: step,
+      completed: false,
+      highlighted: index === 0,
+      selected: index === 0,
+    }));
+
+    const current = updateStep(currentStep - 1, stepsState);
     setNewStep(current);
-  
-  }, [currentStep]);  // Only re-run when currentStep changes
-  
+
+  }, [currentStep, steps]);  // Make sure steps are added as a dependency to reinitialize if changed
 
   const displaySteps = newStep.map((step, index) => {
     return (
       <div key={index} className="w-full">
-        <div className="relative flex  flex-col items-center ">
-          <div className={`rounded-full border-2 border-black 
-            h-12 w-12 flex justify-center items-center py-3 ${step.selected ? "bg-slate-500 border-none text-white" : ""}`}>
-            {/*Display number*/}
+        <div className="relative flex flex-col items-center ">
+          <div
+            className={`rounded-full border-2 border-black h-12 w-12 flex justify-center items-center py-3 ${step.selected ? "bg-slate-500 border-none text-white" : ""
+              }`}
+          >
+            {/* Display number */}
             {step.completed ? (
               <span className="text-white font-bold text-xl">&#10003;</span>
-            ):(index+1)}
+            ) : (
+              index + 1
+            )}
           </div>
-          <div className={`absolute top-0 text-center mt-16 w-32 text-xs font-medium 
-          uppercase ${step.highlighted ? "text-gray-800" : "text-gray-500"}`}>
-            {/*Display description*/}{step.description}
+          <div
+            className={`absolute top-0 text-center mt-16 w-32 text-xs font-medium uppercase ${step.highlighted ? "text-gray-800" : "text-gray-500"
+              }`}
+          >
+            {/* Display description */}
+            {step.description}
           </div>
-          </div>
-        <div className={`flex-auto border-t-2 transition duration-500 ease-in-out
-          ${step.completed ? "border-slate-500": ""}`}>
-          {/*Display line*/}
         </div>
-        
+        <div
+          className={`flex-auto border-t-2 transition duration-500 ease-in-out ${step.completed ? "border-slate-500" : ""
+            }`}
+        >
+          {/* Display line */}
+        </div>
       </div>
-    )
+    );
   });
 
-  return (
-    <div className="flex w-3/5 justify-between items-center mx-auto">
+  return <div className="flex w-3/5 justify-between items-center mx-auto">{displaySteps}</div>;
+};
 
-      {displaySteps}
-
-    </div>
-  )
-}
-
-export default Stepper
+export default Stepper;

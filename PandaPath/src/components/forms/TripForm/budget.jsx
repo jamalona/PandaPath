@@ -1,12 +1,18 @@
-const BudgetSlider = ({ formData, setFormData }) => {
+import { useEffect } from 'react';
+import { useStepperContext } from '../../../contexts/StepperContext';
+
+const BudgetSlider = () => {
+  const { formData, setFormData } = useStepperContext();
   const minBudget = 1000;
   const maxBudget = 12000;
   const defaultBudget = 3000;
 
   // Set default budget if not already set
-  if (!formData.budget) {
-    setFormData((prev) => ({ ...prev, budget: defaultBudget }));
-  }
+  useEffect(() => {
+    if (!formData.budget) {
+      setFormData((prev) => ({ ...prev, budget: defaultBudget }));
+    }
+  }, [formData.budget, setFormData]);
 
   const handleBudgetChange = (e) => {
     const newBudget = Number(e.target.value);

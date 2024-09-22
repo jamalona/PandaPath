@@ -5,21 +5,21 @@ import { Link } from 'react-router-dom';
 
 const SignUpForm = (/*{ addEvent }*/) =>{
 
-  // const [inputs, setInputs] = useState({
-  //   email: "",
-  //   password: ""
-  // });
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: ""
+  });
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setInputs((values) => ({ ...values, [name]: value }));
-  // };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   addEvent(inputs); 
-  //   setInputs({ email: "", password: "" }); // Clear both fields after submission
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addEvent(inputs); 
+    setInputs({ email: "", password: "" }); // Clear both fields after submission
+  };
   return (
     
 <div className='h-lvh relative pt-32'>
