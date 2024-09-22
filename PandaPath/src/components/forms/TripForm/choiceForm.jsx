@@ -1,44 +1,51 @@
 import { choices } from "../../../data/preferenceData";
-import { useState } from "react";
 
-const ChoiceForm = () => {
-  const [formData, setFormData] = useState({
-    regionToVisit: [], 
-    travelStyle: "", 
-    interest: [], 
-  });
+
+const ChoiceForm = ({ formData, setFormData }) => {
 
   const handleChange = (e) => {
     const { name, type, value, checked } = e.target;
-
+  
     setFormData((prevFormData) => {
-      // Handle checkbox input
+      const updatedRegionToVisit = prevFormData.regionToVisit || [];
+      const updatedInterest = prevFormData.interest || [];
+  
       if (type === "checkbox") {
         if (name === "regions") {
-          // Toggle regionToVisit array
-          const updatedRegionToVisit = checked
-            ? [...prevFormData.regionToVisit, value]
-            : prevFormData.regionToVisit.filter((item) => item !== value);
-
-          return { ...prevFormData, regionToVisit: updatedRegionToVisit };
+          const newRegionToVisit = checked
+            ? [...updatedRegionToVisit, value]
+            : updatedRegionToVisit.filter((item) => item !== value);
+  
+          return {
+            ...prevFormData,
+              regionToVisit: newRegionToVisit,
+            
+          };
         } else if (name === "interest") {
-          // Toggle interest array
-          const updatedInterest = checked
-            ? [...prevFormData.interest, value]
-            : prevFormData.interest.filter((item) => item !== value);
-
-          return { ...prevFormData, interest: updatedInterest };
+          const newInterest = checked
+            ? [...updatedInterest, value]
+            : updatedInterest.filter((item) => item !== value);
+  
+          return {
+            ...prevFormData,
+              interest: newInterest,
+            };
+          }
         }
-      }
-
-      // Handle radio input for travelStyle
+      
+  
       if (type === "radio" && name === "travelStyle") {
-        return { ...prevFormData, travelStyle: value };
+        return {
+          ...prevFormData,
+            travelStyle: value,
+          
+        };
       }
-
-      return prevFormData; // Return state as-is if no changes are needed
+  
+      return prevFormData;
     });
   };
+  
 
   return (
     <>
@@ -57,8 +64,8 @@ const ChoiceForm = () => {
                       id={`${section.name}-${index}`}
                       name={section.name} 
                       value={choice.title}
-                      checked={formData.travelStyle === choice.title}
                       onChange={handleChange}
+                      checked={formData.travelStyle === choice.title}
                       className="peer absolute top-5 right-5"
                       required
                     />
@@ -68,12 +75,12 @@ const ChoiceForm = () => {
                       id={`${section.name}-${index}`}
                       name={section.name} 
                       value={choice.title}
+                      onChange={handleChange}
                       checked={
                         section.name === "regions"
                           ? formData.regionToVisit.includes(choice.title)
                           : formData.interest.includes(choice.title)
                       }
-                      onChange={handleChange}
                       required
                       className="peer absolute top-5 right-5"
                     />

@@ -1,33 +1,15 @@
-import { useState } from "react"
-
-const ContactDetails = () => {
-  const [formData, setData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    countryCode: "",
-    phoneNumber: "",
-    additionalInfo: "",
-  })
+const ContactDetails = ({ formData, setFormData }) => {
 
   const handleChange = (event) => {
-    const { name, value } = event.target
-    setData(values => (
-      { ...values, [name]: value }
-    ))
-  }
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   addEvent(formData)
-  //   setData({ firstName: "", lastName: "", email: "", countryCode: "", phoneNumber: "", additionalInfo: "", })
-  // }
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
 
   return (
     <>
-      {/* <div className="w-full bg-white">
-        <div className="w-7/12 mx-auto  mt-20 pt-10 pb-20 h-fit border shadow-xl  min-h-lvh   rounded-lg" > */}
-
           <div className="mb-20  w-4/5 mx-auto px-10 border-2 pt-5 pb-10 rounded-xl shadow-xl mt-20">
             <h3 className="text-4xl mb-10 font-medium text-center">How can we best reach you?</h3>
 
@@ -38,7 +20,7 @@ const ContactDetails = () => {
                 <label className="w-1/2">
                   First Name<br />
                   <input
-                    onChange={formData.firstName}
+                    value={formData.firstName}
                     type="text"
                     className="p-3 border-gray-500 border w-full rounded-md text-lg"
                   />
@@ -47,7 +29,7 @@ const ContactDetails = () => {
                   Last Name<br />
                   <input
                     name="lastName"
-                    onChange={formData.lastName}
+                    value={formData.lastName}
                     type="text"
                     className="p-3 border-gray-500 border w-full rounded-md text-lg"
                   />
@@ -69,13 +51,14 @@ const ContactDetails = () => {
                 </label>
               </div>
 
-              {/* Country Code and Phone..note: just a substitute. remember to use dropdown list for phone codes.*/}
+             
               <div className="flex justify-between space-x-4">
                 <label className="w-1/4">
                   Country Code<br />
                   <input
                     name="countrycode"
-                    onChange={formData.countryCode}
+                    value={formData.countryCode}
+                    onChange={handleChange}
                     type="text"
                     className="p-3 border-gray-500 border w-full rounded-md text-lg"
 
@@ -84,8 +67,8 @@ const ContactDetails = () => {
                 <label className="w-3/4">
                   Phone<br />
                   <input
-                    onChange={formData.phoneNumber}
-
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
                     type="text"
                     className="p-3  border border-gray-500 w-full rounded-md text-lg"
                   />
@@ -97,7 +80,9 @@ const ContactDetails = () => {
                   <textarea
                     id="additionalinfo"
                     name="additionalinfo"
-                    onChange={formData.additionalInfo}
+                    value={formData.additionalInfo}
+                    onChange={handleChange}
+                    
                     className="border-gray-500 border w-full rounded-md  min-h-20 p-3 "
                   />
                 </label>
@@ -105,8 +90,7 @@ const ContactDetails = () => {
               </div>
             </fieldset>
           </div>
-        {/* </form>
-      </div> */}
+
 
 
     </>

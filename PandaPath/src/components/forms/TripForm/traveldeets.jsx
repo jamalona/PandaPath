@@ -1,20 +1,17 @@
 import { useState } from 'react';
 
-const Traveldeets = () => {
-  
-  const [travelData, setTravelData] = useState({
-    startDate: "",
-    tripLength: 12, 
-    adults: 1,
-    children: 0,
-    infants: 0,
-  });
+const Traveldeets = ({ formData, setFormData }) => {
+
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setTravelData((prevData) => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      groupInfo: {
+        ...prevData.groupInfo,
+        [name]: value,
+      }
     }));
   };
 
@@ -27,7 +24,7 @@ const Traveldeets = () => {
           <input
             type="date"
             name="startDate"
-            value={travelData.startDate}
+            value={formData.startDate}
             onChange={handleInputChange}
             className="w-full border border-gray-500 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
@@ -42,7 +39,7 @@ const Traveldeets = () => {
           <input
             type="number"
             name="tripLength"
-            value={travelData.tripLength}
+            value={formData.tripLength}
             onChange={handleInputChange}
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             min="5"
@@ -61,7 +58,7 @@ const Traveldeets = () => {
             <input
               type="number"
               name="adults"
-              value={travelData.adults}
+              value={formData.adults}
               onChange={handleInputChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
               min="1"
@@ -74,7 +71,7 @@ const Traveldeets = () => {
             <input
               type="number"
               name="children"
-              value={travelData.children}
+              value={formData.children}
               onChange={handleInputChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
               min="0"
@@ -87,7 +84,7 @@ const Traveldeets = () => {
             <input
               type="number"
               name="infants"
-              value={travelData.infants}
+              value={formData.infants}
               onChange={handleInputChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
               min="0"

@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 
-const BudgetSlider = () => {
+const BudgetSlider = ({ formData, setFormData }) => {
 
-  const [budget, setBudget] = useState(3000);
-
- 
   const minBudget = 1000;
   const maxBudget = 12000;
+
+  useEffect(() => {
+    if (!formData.budget) {
+      setFormData((prev) => ({ ...prev, budget: 3000 })); // Default budget
+    }
+  }, [formData.budget, setFormData]);
+
+  const handleBudgetChange = (e) => {
+    const newBudget = Number(e.target.value);
+    setFormData((prev) => ({ ...prev, budget: newBudget }));
+  };
 
   return (
     <div className="mb-20 mt-20 ml-auto mr-auto w-4/5 pl-10 pr-10 border-2 pt-5 shadow-xl rounded-xl ">
@@ -25,14 +33,14 @@ const BudgetSlider = () => {
           min={minBudget}
           max={maxBudget}
           step={500}
-          value={budget}
-          onChange={(e) => setBudget(Number(e.target.value))}
+          value={formData.budget}
+          onChange={handleBudgetChange}
           className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer  "
         />
 
         {/* Dynamically display selected budget */}
         <div className="mt-4 text-xl text-center pb-4">
-          £{budget.toLocaleString()} - £{(budget + 500).toLocaleString()} per person
+          £{(formData.budget || 3000).toLocaleString()} - £{((formData.budget || 3000) + 500).toLocaleString()} per person
         </div>
       </div>
     </div>

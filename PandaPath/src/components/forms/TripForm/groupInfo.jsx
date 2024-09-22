@@ -1,11 +1,11 @@
 import BudgetSlider from "./budget";
 import Traveldeets from "./traveldeets";
 
-const GroupInfo = () => {
+const GroupInfo = ({ formData, setFormData }) => {
   return (
     <>
-      <BudgetSlider />
-      <Traveldeets/>
+      <BudgetSlider formData={formData} setFormData={setFormData}/>
+      <Traveldeets formData={formData} setFormData={setFormData}/>
     </>
   )
 }

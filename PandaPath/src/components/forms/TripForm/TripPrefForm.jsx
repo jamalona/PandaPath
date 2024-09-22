@@ -1,10 +1,10 @@
 import ChoiceForm from "./choiceForm";
 
 
-const TripPref = () => {
+const TripPref = ({ formData, setFormData }) => {
   return (
     <>
-      <ChoiceForm />
+      <ChoiceForm formData={formData} setFormData={setFormData} />
     </>
   );
 };
