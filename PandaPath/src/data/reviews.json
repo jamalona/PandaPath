@@ -1,0 +1,63 @@
+[
+  {
+    "rating": 5,
+    "title": "Amazing Experience Exploring China with James",
+    "opinion": "James helped plan an unforgettable trip to China. The itinerary was perfectly tailored to our interests, including hidden gems we wouldn't have discovered on our own. His local knowledge made the experience rich and authentic. Highly recommend!",
+    "name": "Jessica"
+  },
+  {
+    "rating": 4,
+    "title": "Great Cultural Tour Curated",
+    "opinion": "Chen provided a detailed and thoughtful itinerary, focusing on China’s minority cultures. He was attentive to our preferences and made sure everything went smoothly. We got to see parts of China we never imagined. Would book again!",
+    "name": "Ilya"
+  },
+  {
+    "rating": 5,
+    "title": "A Smooth and Fun Adventure with Yang",
+    "opinion": "Yang was amazing! His recommendations made our 9-day tour so much fun and stress-free. We especially loved his restaurant suggestions and the off-the-beaten-path stops. He made sure our experience was personalized and exciting!",
+    "name": "David"
+  },
+  {
+    "rating": 4,
+    "title": "Wonderful Support from Jamal on Our Custom Trip",
+    "opinion": "\"Jamal was fantastic! He made the planning process so easy. He took our ideas and budget into account and crafted the perfect itinerary. We felt confident the entire time, thanks to his expert advice and attention to detail.\"",
+    "name": "Eric"
+  },
+  {
+    "rating": 5,
+    "title": "Top-Notch Service from James on Our China Journey",
+    "opinion": "James did a phenomenal job planning our China tour. His attention to detail was outstanding, and he made sure we experienced the best of China’s culture, history, and nature. Couldn’t have asked for a better guide!",
+    "name": "Eren"
+  },
+
+  {
+    "rating": 5,
+    "title": "Unforgettable Panda Encounters with PandaPath",
+    "opinion": "The PandaPath team organized an amazing tour where we got up close with the pandas. The guides were knowledgeable and passionate, making the experience truly memorable. Highly recommend for any animal lover!",
+    "name": "Sophia"
+  },
+  {
+    "rating": 3,
+    "title": "Cultural Insights and Stunning Landscapes",
+    "opinion": "Our journey with PandaPath was filled with breathtaking views and rich cultural experiences. The itinerary was well-planned, but we wished we had more time in each location. Overall, a fantastic experience!",
+    "name": "Liam"
+  },
+  {
+    "rating": 5,
+    "title": "Exceptional Customer Service",
+    "opinion": "From the moment we booked our trip, PandaPath provided exceptional service. They were responsive to our questions and made adjustments to our itinerary on the fly. Truly a customer-first approach!",
+    "name": "Olivia"
+  },
+  {
+    "rating": 4,
+    "title": "Amazing Food Experiences",
+    "opinion": "PandaPath introduced us to some incredible local cuisines that we would have never tried on our own. The food tours were well-organized and delicious. Would definitely recommend for foodies!",
+    "name": "Noah"
+  },
+  {
+    "rating": 5,
+    "title": "A Perfectly Tailored Adventure",
+    "opinion": "Our customized trip through PandaPath was perfectly tailored to our interests. The itinerary included unique experiences that we never would have discovered otherwise. We had an amazing time!",
+    "name": "Emma"
+  }
+]

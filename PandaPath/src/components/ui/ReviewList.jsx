@@ -1,46 +1,27 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { IoIosStar } from "react-icons/io";
+import reviewsData from '../../data/reviews.json'; // Adjust the path as necessary
 
 const ReviewList = () => {
   const scrollRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(true);
 
-  const Reviews = [
-    {
-      rating: 5,
-      title: 'Amazing Experience Exploring China with James',
-      opinion: "James helped plan an unforgettable trip to China. The itinerary was perfectly tailored to our interests, including hidden gems we wouldn't have discovered on our own. His local knowledge made the experience rich and authentic. Highly recommend!",
-      name: 'Jessica',
-    },
-    {
-      rating: 4,
-      title: 'Great Cultural Tour Curated',
-      opinion: "Chen provided a detailed and thoughtful itinerary, focusing on China’s minority cultures. He was attentive to our preferences and made sure everything went smoothly. We got to see parts of China we never imagined. Would book again!",
-      name: 'Ilya',
-    },
-    {
-      rating: 5,
-      title: 'A Smooth and Fun Adventure with Yang',
-      opinion: "Yang was amazing! His recommendations made our 9-day tour so much fun and stress-free. We especially loved his restaurant suggestions and the off-the-beaten-path stops. He made sure our experience was personalized and exciting!",
-      name: 'David',
-    },
-    {
-      rating: 4,
-      title: 'Wonderful Support from Jamal on Our Custom Trip',
-      opinion: '"Jamal was fantastic! He made the planning process so easy. He took our ideas and budget into account and crafted the perfect itinerary. We felt confident the entire time, thanks to his expert advice and attention to detail."',
-      name: 'Eric',
-    },
-    {
-      rating: 5,
-      title: 'Top-Notch Service from James on Our China Journey',
-      opinion: "James did a phenomenal job planning our China tour. His attention to detail was outstanding, and he made sure we experienced the best of China’s culture, history, and nature. Couldn’t have asked for a better guide!",
-      name: 'Eren',
-    },
-  ];
+  
+  const Reviews = reviewsData;
+
+  
+  const duplicatedReviews = [...Reviews, ...Reviews];
 
   useEffect(() => {
     const scrollInterval = setInterval(() => {
       if (isScrolling && scrollRef.current) {
-        scrollRef.current.scrollLeft += 1;
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+
+        if (scrollLeft + clientWidth >= scrollWidth) {
+          scrollRef.current.scrollLeft = 0;
+        } else {
+          scrollRef.current.scrollLeft += 1; // Adjust speed by changing the increment
+        }
       }
     }, 10); // Adjust speed by changing the interval
 
@@ -65,11 +46,14 @@ const ReviewList = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {Reviews.map((review, index) => (
+        {duplicatedReviews.map((review, index) => (
           <div key={index} className="text-center bg-white min-w-[31%] h-64 content-center p-4 shadow-lg rounded-lg">
             <h2 className="text-2xl font-semibold mb-2">{review.title}</h2>
             <p className="text-sm mb-2">{review.opinion}</p>
-            <p className="font-bold">{review.name}</p>
+            <p className="font-bold pr-2 ">{review.name}</p>
+            {[...Array(review.rating)].map((_, i) => (
+              <span key={i} className='inline-flex w-5'><IoIosStar /></span>
+            ))}
           </div>
         ))}
       </div>
@@ -78,4 +62,3 @@ const ReviewList = () => {
 };
 
 export default ReviewList;
-

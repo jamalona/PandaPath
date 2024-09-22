@@ -54,6 +54,7 @@ const TripPref = () => {
                       onChange={handleChange}
                       checked={formData.tripPreferences.travelStyle === choice.title}
                       className="peer absolute top-5 right-5"
+                      required
                     />
                   ) : (
                     <input
