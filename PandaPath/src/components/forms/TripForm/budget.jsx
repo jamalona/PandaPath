@@ -1,16 +1,12 @@
-import { useEffect } from 'react';
-
 const BudgetSlider = ({ formData, setFormData }) => {
-
   const minBudget = 1000;
   const maxBudget = 12000;
   const defaultBudget = 3000;
 
-  useEffect(() => {
-    if (!formData.budget) {
-      setFormData((prev) => ({ ...prev, budget: defaultBudget }));
-    }
-  }, [formData.budget, setFormData]);
+  // Set default budget if not already set
+  if (!formData.budget) {
+    setFormData((prev) => ({ ...prev, budget: defaultBudget }));
+  }
 
   const handleBudgetChange = (e) => {
     const newBudget = Number(e.target.value);

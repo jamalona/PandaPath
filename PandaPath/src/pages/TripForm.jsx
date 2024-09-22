@@ -11,9 +11,9 @@ const TripForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     tripPreferences: {
-        regionToVisit: [], 
+        regionToVisit: [""], 
         travelStyle: "", 
-        interest: [], 
+        interest: [""], 
     },
     groupInfo: {
       budget:"",
@@ -62,27 +62,47 @@ const TripForm = () => {
     }
   };
 
+  const validateStep = () => {
+    switch (currentStep) {
+      case 1:
+        return formData.tripPreferences.regionToVisit.length > 0;  // Ensure a region is selected
+      case 2:
+        return formData.groupInfo.budget && formData.groupInfo.startDate;  // Validate group info
+      case 3:
+        return formData.contactDetails.email && formData.contactDetails.firstName;  // Ensure contact details
+      default:
+        return true;
+    }
+  };
+
   const handleClick = (direction) => {
     let newStep = currentStep;
   
-    // Move to the next or previous step
     if (direction === "next") {
+      if (!validateStep()) {
+        alert("Please complete the current step before proceeding.");
+        return;
+      }
+  
+      // If we're on the last step, submit the form
       if (currentStep === steps.length) {
-        // Trigger form submission on the last step
         handleSubmit();  // Call handleSubmit directly instead of using requestSubmit
+        return;
       } else {
         newStep++;
       }
     } else {
+      // Allow the user to go "back"
       newStep--;
     }
   
-    // Ensure the step is valid
+    // Ensure the step is within the valid range
     if (newStep > 0 && newStep <= steps.length) {
       setCurrentStep(newStep);
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
   };
+  
   
   const handleSubmit = async (e) => {
     if (e) e.preventDefault(); // Prevent default form submission

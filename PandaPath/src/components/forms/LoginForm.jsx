@@ -13,6 +13,7 @@ const LoginForm = (/*{ addEvent }*/) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInputs((values) => ({ ...values, [name]: value }));
+    console.log(formData)
   };
 
   const handleSubmit = (event) => {

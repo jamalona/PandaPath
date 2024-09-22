@@ -50,6 +50,8 @@ const ChoiceForm = ({ formData, setFormData }) => {
     const { name, type, value, checked } = e.target;
   
     setFormData((prevFormData) => {
+      console.log(`Type: ${type}, Name: ${name}, Value: ${value}, Checked: ${checked}`);
+  
       let updatedFormData = { ...prevFormData };
       if (type === "checkbox") {
         if (name === "regions") {
@@ -59,12 +61,13 @@ const ChoiceForm = ({ formData, setFormData }) => {
             updatedFormData.regionToVisit = updatedFormData.regionToVisit.filter(item => item !== value);
           }
         }
-        // Do similar logic for 'interest'...
       } else if (type === "radio" && name === "travelStyle") {
         if (updatedFormData.travelStyle !== value) {
           updatedFormData.travelStyle = value;
         }
       }
+      console.log(formData)
+      console.log(2)
       return updatedFormData;
     });
   };
@@ -90,7 +93,7 @@ const ChoiceForm = ({ formData, setFormData }) => {
                       onChange={handleChange}
                       checked={formData.travelStyle === choice.title}
                       className="peer absolute top-5 right-5"
-                      required
+                      //required
                     />
                   ) : (
                     <input
@@ -104,7 +107,7 @@ const ChoiceForm = ({ formData, setFormData }) => {
                           ? formData.regionToVisit?.includes(choice.title)
                           : formData.interest?.includes(choice.title)
                       }
-                      required
+                      
                       className="peer absolute top-5 right-5"
                     />
                   )}
