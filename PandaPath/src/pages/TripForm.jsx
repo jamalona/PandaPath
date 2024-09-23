@@ -90,10 +90,7 @@ const TripForm = () => {
   
     if (currentStep === steps.length) {
       console.log("Submitting form with data:", formData);
-  
 
-      
-  
       
       const dataToInsert = {
         region_to_visit: formData.tripPreferences.regionToVisit,
@@ -129,7 +126,7 @@ const TripForm = () => {
         <form 
         onSubmit={handleSubmit}
         
-        className="w-8/12 mx-auto mt-20 pt-10 pb-20 h-fit border shadow-xl">
+        className="w-8/12 mx-auto  pt-10 pb-20 h-fit border shadow-xl">
           {/* Stepper navigation */}
           <Stepper steps={steps} currentStep={currentStep} />
 

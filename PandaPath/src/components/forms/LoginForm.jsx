@@ -55,7 +55,7 @@ const LoginForm = ({setToken}) => {
   return (
     <div className='h-lvh relative pt-32'>
       <img src={town} className='absolute inset-0 w-full h-full object-cover opacity-90 -z-10 ' />
-      <form onSubmit={handleSubmit} className='mt-20 bg-black text-white bg-opacity-30 backdrop-blur-lg min-w-96 w-4/12 ml-auto mr-auto h-4/6 rounded-2xl border border-white'>
+      <form onSubmit={handleSubmit} className='bg-black text-white bg-opacity-30 backdrop-blur-lg min-w-96 w-4/12 ml-auto mr-auto h-4/6 rounded-2xl border border-white'>
         <h1 className='text-5xl text-center py-10'>Login</h1>
         <fieldset className='w-4/5 ml-auto mr-auto border-t-4 pt-8 '>
 

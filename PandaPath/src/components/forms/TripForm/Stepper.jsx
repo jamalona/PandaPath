@@ -52,6 +52,8 @@ const Stepper = ({ steps, currentStep }) => {
 
   const displaySteps = newStep.map((step, index) => {
     return (
+  
+      
       <div key={index} className="w-full">
         <div className="relative flex flex-col items-center ">
           <div
@@ -81,9 +83,21 @@ const Stepper = ({ steps, currentStep }) => {
         </div>
       </div>
     );
-  });
+  }
+ 
+  );
 
-  return <div className="flex w-3/5 justify-between items-center mx-auto">{displaySteps}</div>;
+  return (
+    <>
+   
+    <div className="w-8/12 h-32 bg-baccol relative shadow-2xl mx-auto mb-20">
+    <div className="w-4 h-4 bg-baccol  absolute top-5 -left-2 rotate-45 shadow-2xl"/>
+    </div>
+  
+  <div className="flex w-3/5 justify-between items-center mx-auto">{displaySteps}</div>
+  </>
+
+);
 };
 
 export default Stepper;

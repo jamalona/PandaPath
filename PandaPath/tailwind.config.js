@@ -24,6 +24,10 @@ export default {
         'col3': '#CCCCCC'
 
       },
+      backgroundColor:{
+        'baccol':'#f4f4f4'
+
+      },
       boxShadow: {
 
         'inner-custom': 'inset 0px 4px 0px 0px #F4F4F4'

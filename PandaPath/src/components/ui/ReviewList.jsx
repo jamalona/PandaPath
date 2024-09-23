@@ -4,42 +4,7 @@ import reviewsData from '../../data/reviews.json';
 
 const ReviewList = () => {
   const scrollRef = useRef(null);
-  const [isScrolling, setIsScrolling] = useState(true);
 
-    useEffect(() => {
-    let animationFrameId;
-
-    const smoothScroll = () => {
-      if (isScrolling && scrollRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-
-       
-        if (scrollLeft + clientWidth >= scrollWidth) {
-          scrollRef.current.scrollLeft = 0;
-        } else {
-          scrollRef.current.scrollLeft += 1; // Adjust speed by changing increment
-        }
-
-       
-        animationFrameId = requestAnimationFrame(smoothScroll);
-      }
-    };
-
-    
-    animationFrameId = requestAnimationFrame(smoothScroll);
-
-    // Clean up the animation frame on unmount
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isScrolling]);
-
-  // Event handlers to pause and resume scrolling
-  const handleMouseEnter = () => {
-    setIsScrolling(false);
-  };
-
-  const handleMouseLeave = () => {
-    setIsScrolling(true);
-  };
 
   return (
     <div className="w-screen">
@@ -48,11 +13,11 @@ const ReviewList = () => {
       <div
         ref={scrollRef}
         className="flex items-center justify-start space-x-6 w-3/4 overflow-x-scroll ml-auto mr-auto h-72 no-scrollbar"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        // onMouseEnter={handleMouseEnter}
+        // onMouseLeave={handleMouseLeave}
       >
-        {/* Loop twice to create continuous scrolling without duplicating the array */}
-        {[...reviewsData, ...reviewsData].map((review, index) => (
+       
+        {[...reviewsData].map((review, index) => (
           <div key={index} className="text-center bg-white min-w-[31%] h-64 content-center p-4 shadow-lg rounded-lg">
             <h2 className="text-2xl font-semibold mb-2">{review.title}</h2>
             <p className="text-sm mb-2">{review.opinion}</p>
@@ -68,3 +33,5 @@ const ReviewList = () => {
 };
 
 export default ReviewList;
+
+

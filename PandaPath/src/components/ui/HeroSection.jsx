@@ -8,7 +8,7 @@ const HeroSection = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
   return (
-    <div className="relative w-screen h-[63vh] overflow-hidden mt-20 text-center">
+    <div className="relative w-screen h-[63vh] overflow-hidden  text-center">
       <video autoPlay muted loop src={videoBg} className="absolute inset-0 w-full h-full object-cover" />
 
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-white">

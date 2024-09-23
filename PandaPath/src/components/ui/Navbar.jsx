@@ -40,7 +40,7 @@ const Navbar = ({ token }) => {
       </span>
 
       {token ? (
-        <span className="justify-left text-lg text-left">
+        <span className="text-lg ml-40 text-center">
           Welcome, {token.user.user_metadata.full_name}
         </span>
       ) : (
@@ -53,10 +53,16 @@ const Navbar = ({ token }) => {
             <li className="pb-2 hover:border-b border-slate-950">Your trip</li>
           </Link>
         ) : (
-          ""
+          <Link to="/login">
+          <li className="pb-2 hover:border-b border-slate-950">Your trip</li>
+        </Link>
         )}
 
+        <Link to="/agents">
         <li className="pb-2 hover:border-b border-slate-950">Agents</li>
+        </Link>
+
+
         <li className="pb-2 relative">
           <button
             className="py-2 px-5 inline-flex rounded-xl hover:bg-gray-300"
