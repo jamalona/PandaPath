@@ -12,7 +12,7 @@ import TripForm from './pages/TripForm';
 import ContactDetails from './components/forms/TripForm/ContactDetails';
 import SignUpForm from './components/forms/signUpForm';
 import AgentsPage from './pages/agentsPage';
-
+import RequestConfirmation from './pages/requestConfirmation'
 import { StepperProvider } from './contexts/StepperContext'; // Import the provider
 
 
@@ -51,6 +51,7 @@ if (sessionStorage.getItem('token')){
           <Route path="/Expedition" element={<Itinerary1 />} />
           <Route path="/Guizhou" element={<Itinerary2 />} />
           <Route path="/details" element={<ContactDetails />} />
+          <Route path="/confirmation" element={<RequestConfirmation />} />
           <Route path="/yourtrip" element={<Yourtrip/>} />
         </Routes>
         </div>

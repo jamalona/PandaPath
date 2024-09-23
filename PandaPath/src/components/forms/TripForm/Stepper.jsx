@@ -90,9 +90,10 @@ const Stepper = ({ steps, currentStep }) => {
   return (
     <>
    
-    <div className="w-8/12 h-32 bg-baccol relative shadow-2xl mx-auto mb-20">
+    {/* <div className="w-8/12 h-32 bg-baccol relative shadow-2xl mx-auto mb-20"><h2>Let's create your dream tour to China!</h2>
+<p>Hi, I’m Hayley, your personal contact at Panda Path! In the next 3 minutes, I'll guide you through the form to craft your perfect journey through China.</p>
     <div className="w-4 h-4 bg-baccol  absolute top-5 -left-2 rotate-45 shadow-2xl"/>
-    </div>
+    </div> */}
   
   <div className="flex w-3/5 justify-between items-center mx-auto">{displaySteps}</div>
   </>

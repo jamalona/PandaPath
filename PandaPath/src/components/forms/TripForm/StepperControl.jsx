@@ -1,6 +1,6 @@
 const StepperControl = ({handleClick, currentStep, steps}) =>{
 
-  
+
   return (
     <div className="flex justify-around">
 
@@ -12,11 +12,23 @@ const StepperControl = ({handleClick, currentStep, steps}) =>{
     ${currentStep ==1? "opacity-0 cursor-not-allowed" : ""}`} >Previous step</button>
 
     {/*next button */}
+    
+    {currentStep === steps.length?
     <button 
+    type="submit"
     onClick={()=>handleClick("next")}
     className="bg-white border border-black py-2 px-4 text-2xl rounded-xl hover:bg-black hover:text-white ">
-      {currentStep === steps.length? "Send request": "Next step"}
-      </button>
+       Send request
+      </button> :  
+
+      <button 
+    type="button"
+    onClick={()=>handleClick("next")}
+    className="bg-white border border-black py-2 px-4 text-2xl rounded-xl hover:bg-black hover:text-white ">
+       Next step
+      </button> }
+
+
 
     </div>
   )
