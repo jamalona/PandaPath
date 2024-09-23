@@ -16,12 +16,12 @@ export const StepperProvider = ({ children }) => {
       interest: [],
     },
     groupInfo: {
-      budget: "",
+      budget: 0,
       startDate: "",
       tripLength: 12,
       adults: 1,
-      children: "",
-      infants: "",
+      children: 0,
+      infants: 0,
     },
     contactDetails: {
       firstName: "",

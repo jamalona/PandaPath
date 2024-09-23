@@ -1,33 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { IoIosStar } from "react-icons/io";
-import reviewsData from '../../data/reviews.json'; // Adjust the path as necessary
+import reviewsData from '../../data/reviews.json'; 
 
 const ReviewList = () => {
   const scrollRef = useRef(null);
   const [isScrolling, setIsScrolling] = useState(true);
 
-  
-  const Reviews = reviewsData;
+    useEffect(() => {
+    let animationFrameId;
 
-  
-  const duplicatedReviews = [...Reviews, ...Reviews];
-
-  useEffect(() => {
-    const scrollInterval = setInterval(() => {
+    const smoothScroll = () => {
       if (isScrolling && scrollRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
 
+       
         if (scrollLeft + clientWidth >= scrollWidth) {
           scrollRef.current.scrollLeft = 0;
         } else {
-          scrollRef.current.scrollLeft += 1; // Adjust speed by changing the increment
+          scrollRef.current.scrollLeft += 1; // Adjust speed by changing increment
         }
-      }
-    }, 10); // Adjust speed by changing the interval
 
-    return () => clearInterval(scrollInterval);
+       
+        animationFrameId = requestAnimationFrame(smoothScroll);
+      }
+    };
+
+    
+    animationFrameId = requestAnimationFrame(smoothScroll);
+
+    // Clean up the animation frame on unmount
+    return () => cancelAnimationFrame(animationFrameId);
   }, [isScrolling]);
 
+  // Event handlers to pause and resume scrolling
   const handleMouseEnter = () => {
     setIsScrolling(false);
   };
@@ -46,13 +51,14 @@ const ReviewList = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {duplicatedReviews.map((review, index) => (
+        {/* Loop twice to create continuous scrolling without duplicating the array */}
+        {[...reviewsData, ...reviewsData].map((review, index) => (
           <div key={index} className="text-center bg-white min-w-[31%] h-64 content-center p-4 shadow-lg rounded-lg">
             <h2 className="text-2xl font-semibold mb-2">{review.title}</h2>
             <p className="text-sm mb-2">{review.opinion}</p>
-            <p className="font-bold pr-2 ">{review.name}</p>
+            <p className="font-bold pr-2">{review.name}</p>
             {[...Array(review.rating)].map((_, i) => (
-              <span key={i} className='inline-flex w-5'><IoIosStar /></span>
+              <span key={i} className="inline-flex w-5 text-yellow-400"><IoIosStar /></span>
             ))}
           </div>
         ))}

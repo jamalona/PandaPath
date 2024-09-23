@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Logo from '../../assets/images/PandaPathLogo.jpg';
 import { FaCircleUser } from "react-icons/fa6";
+import { SlArrowDown } from "react-icons/sl";
 
 const Navbar = ({ token }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -58,10 +59,11 @@ const Navbar = ({ token }) => {
         <li className="pb-2 hover:border-b border-slate-950">Agents</li>
         <li className="pb-2 relative">
           <button
-            className="border py-2 px-5 rounded-xl hover:bg-gray-300"
+            className="py-2 px-5 inline-flex rounded-xl hover:bg-gray-300"
             onClick={handleUserIconClick}
           >
-            <FaCircleUser />
+            <FaCircleUser className='mr-2' /><SlArrowDown />
+
           </button>
 
           {showPopup && (

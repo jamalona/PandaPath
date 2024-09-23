@@ -6,6 +6,7 @@ import StepperControl from "../components/forms/TripForm/StepperControl";
 import GroupInfo from "../components/forms/TripForm/groupInfo";
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
+import { TbRuler2Off } from "react-icons/tb";
 
 const TripForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -17,7 +18,7 @@ const TripForm = () => {
 
 
    
- // Country Code and Phone..note: just a substitute. Remember to use dropdown list for phone codes.
+ 
 
   // Make sure to use currentStep here
   const displayStep = () => {
@@ -41,38 +42,38 @@ const TripForm = () => {
     }
   };
 
-  // const validateStep = () => {
-  //   switch (currentStep) {
-  //     case 1:
-  //       return formData.tripPreferences.regionToVisit.length > 0;  // Ensure a region is selected
-  //     case 2:
-  //       return formData.groupInfo.budget && formData.groupInfo.startDate;  // Validate group info
-  //     case 3:
-  //       return formData.contactDetails.email && formData.contactDetails.firstName;  // Ensure contact details
-  //     default:
-  //       return true;
-  //   }
-  // };
+  const validateStep = () => {
+    switch (currentStep) {
+      case 1:
+        return formData.tripPreferences.regionToVisit.length > 0 && formData.tripPreferences.travelStyle.length > 0&& formData.tripPreferences.interest.length > 0; 
+      case 2:
+        return true;  // Validate group info
+      case 3:
+        return formData.contactDetails.email && formData.contactDetails.firstName;  // Ensure contact details
+      default:
+        return true;
+    }
+  };
 
   const handleClick = (direction) => {
     let newStep = currentStep;
   
     if (direction === "next") {
-      // if (!validateStep()) {
+      if (!validateStep()) {
         
-      //   alert("Please complete the current step before proceeding.");
-      //   return;
-      // }
+        alert("Please complete the current step before proceeding.");
+        return;
+      }
   
       // If we're on the last step, submit the form
       if (currentStep === steps.length) {
-        handleSubmit();  // Call handleSubmit directly instead of using requestSubmit
+        handleSubmit(); 
         return;
       } else {
         newStep++;
       }
     } else {
-      // Allow the user to go "back"
+      
       newStep--;
     }
   
@@ -90,8 +91,8 @@ const TripForm = () => {
     if (currentStep === steps.length) {
       console.log("Submitting form with data:", formData);
   
-      // Perform form submission logic here (e.g., to Supabase)
-      // Uncomment and implement your form submission here
+
+      
   
       
       const dataToInsert = {
@@ -135,11 +136,7 @@ const TripForm = () => {
           {displayStep()}
 
           {/* Content of the step */}
-          {/* <div>
-            <StepperContext.Provider value={{ formData, setFormData }}>
-              {displayStep()}
-            </StepperContext.Provider>
-          </div> */}
+        
 
           {/* Navigation controls */}
           <StepperControl

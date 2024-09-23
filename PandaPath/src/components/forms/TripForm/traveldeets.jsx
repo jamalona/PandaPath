@@ -36,7 +36,7 @@ const Traveldeets = ({ formData, setFormData }) => {
         <input
           type="number"
           name="tripLength"
-          value={formData.tripLength || ""}
+          value={formData.tripLength || 12}
           onChange={handleInputChange}
           className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           min="5"
@@ -56,7 +56,7 @@ const Traveldeets = ({ formData, setFormData }) => {
           <input
             type="number"
             name="adults"
-            value={formData.adults || ""}
+            value={formData.adults || 0}
             onChange={handleInputChange}
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             min="1"
@@ -70,7 +70,7 @@ const Traveldeets = ({ formData, setFormData }) => {
           <input
             type="number"
             name="children"
-            value={formData.children || ""}
+            value={formData.children || 0}
             onChange={handleInputChange}
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             min="0"
@@ -83,7 +83,7 @@ const Traveldeets = ({ formData, setFormData }) => {
           <input
             type="number"
             name="infants"
-            value={formData.infants || ""}
+            value={formData.infants || 0}
             onChange={handleInputChange}
             className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             min="0"
