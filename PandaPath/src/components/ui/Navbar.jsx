@@ -35,7 +35,7 @@ const Navbar = ({ token }) => {
     <nav className="flex items-center justify-between pl-2 pr-6 text-2xl fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <span>
         <Link to="/">
-          <img src={Logo} className="w-24 py-1 rounded-full inline" alt="Logo" />
+          <img src={Logo} className="w-20  h-20 py-1 rounded-full inline" alt="Logo" />
         </Link>
       </span>
 
