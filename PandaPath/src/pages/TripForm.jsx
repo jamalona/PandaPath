@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const TripForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const { formData, setFormData } = useStepperContext()
+  const { formData, setFormData } = useStepperContext();
   const navigate = useNavigate();
 
 

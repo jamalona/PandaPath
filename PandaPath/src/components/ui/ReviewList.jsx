@@ -13,11 +13,9 @@ const ReviewList = () => {
       <div
         ref={scrollRef}
         className="flex items-center justify-start space-x-6 w-3/4 overflow-x-scroll ml-auto mr-auto h-72 no-scrollbar"
-        // onMouseEnter={handleMouseEnter}
-        // onMouseLeave={handleMouseLeave}
       >
        
-        {[...reviewsData].map((review, index) => (
+        {reviewsData.map((review, index) => (
           <div key={index} className="text-center bg-white min-w-[31%] h-64 content-center p-4 shadow-lg rounded-lg">
             <h2 className="text-2xl font-semibold mb-2">{review.title}</h2>
             <p className="text-sm mb-2">{review.opinion}</p>

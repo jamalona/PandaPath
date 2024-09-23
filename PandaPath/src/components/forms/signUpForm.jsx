@@ -19,7 +19,7 @@ const SignUpForm = () => {
 
   const handleSubmit = async () => {
     // event.preventDefault();
-    // addEvent(formData); 
+    
     try {
       const { data, error } = await supabase.auth.signUp(
         {

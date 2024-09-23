@@ -12,8 +12,8 @@ const Itinerary1cards = () => {
 
         <div className="flex flex-col items-center">
           {itinerary1.map((item, index) => (
-            <div key={index} className="w-4/5 mb-8 p-6 bg-gray-100 shadow-lg rounded-md">
-               {/*<img src={item.img}/>*/}
+            <div key={index} className="w-5/12 mb-8 p-6 bg-gray-100 shadow-lg rounded-md">
+               <img src={item.link} className=""/>
               <h3 className="text-2xl font-semibold mb-3">{`Day ${item.day}: ${item.title}`}</h3>
               <p className="mb-2 text-gray-600">{item.description}</p>
               <p><strong>Location:</strong> {item.location}</p>
