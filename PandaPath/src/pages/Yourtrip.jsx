@@ -1,10 +1,12 @@
+import TripDetails from "../components/ui/tripDetails"
+const Yourtrip = () => {
 
-const Yourtrip  = () => {
-
-  return(
+  return (
     <>
-    <div className="mt-28 text-center text-2xl">No booking requests made.</div>
-    </>
+    <TripDetails/>
+
+  </>
+
   )
 
 }
