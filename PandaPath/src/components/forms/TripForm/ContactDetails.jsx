@@ -65,7 +65,7 @@ const ContactDetails = () => {
 
         <div className="flex justify-between space-x-4">
           <label className="w-1/4">
-            Country Code<br />
+            Country<br />
             <input
               name="countryCode"
               value={formData.contactDetails.countryCode}

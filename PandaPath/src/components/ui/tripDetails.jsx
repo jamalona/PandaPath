@@ -59,9 +59,10 @@ const TripDetails = () => {
                 <div className="bg-white shadow-xl rounded-lg p-6 max-w-sm w-full">
                   <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
                   <ul className="space-y-2">
-                    <li><strong>Full Name:</strong> {detail.first_name}</li>
+                    <li><strong>Full Name:</strong> {detail.first_name} {detail.last_name}</li>
                     <li><strong>Email:</strong> {detail.email}</li>
                     <li><strong>Phone:</strong> {detail.phone_number}</li>
+                    <li><strong>Country:</strong> {detail.country_code}</li>
                   </ul>
                 </div>
 
