@@ -1,7 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { supabase } from '../../supabaseClient'; 
+import { supabase } from '../../supabaseClient';
 
 const TripDetails = () => {
+  const [tripDetails, setTripDetails] = useState(null)
+  const [error, setError] = useState(null)
+
+
+  useEffect(() => {
+    const fetchTripDetails = async () => {
+      const { data, error } = await supabase
+        .from('booking_form')
+        .select()
+      if (error) {
+        setError("Could not fetch trip details")
+        console.log(error)
+        setTripDetails(null)
+      }
+      if (data) {
+        setTripDetails(data)
+        setError(null)
+      }
+    }
+    fetchTripDetails()
+    console.log(tripDetails)
+  }, [])
+
+
+
 
   return (
     <>
@@ -10,7 +35,7 @@ const TripDetails = () => {
       <h2 className="text-3xl font-bold my-8 text-center">Your Request Details</h2>
 
       <div className="flex flex-wrap justify-center gap-6">
-       
+
         <div className="bg-white shadow-xl rounded-lg p-6 max-w-sm w-full">
           <h3 className="text-xl font-semibold mb-4">Trip Details</h3>
           <ul className="space-y-2">
@@ -23,7 +48,7 @@ const TripDetails = () => {
           </ul>
         </div>
 
-       
+
         <div className="bg-white shadow-xl rounded-lg p-6 max-w-sm w-full">
           <h3 className="text-xl font-semibold mb-4">Group Information</h3>
           <ul className="space-y-2">
@@ -33,7 +58,7 @@ const TripDetails = () => {
           </ul>
         </div>
 
-        
+
         <div className="bg-white shadow-xl rounded-lg p-6 max-w-sm w-full">
           <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
           <ul className="space-y-2">
