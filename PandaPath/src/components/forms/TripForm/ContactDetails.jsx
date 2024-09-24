@@ -31,6 +31,7 @@ const ContactDetails = () => {
               onChange={handleChange} 
               type="text"
               className="p-3 border-gray-500 border w-full rounded-md text-lg"
+              required
             />
           </label>
           <label className="w-1/2">
@@ -41,6 +42,7 @@ const ContactDetails = () => {
               onChange={handleChange}  
               type="text"
               className="p-3 border-gray-500 border w-full rounded-md text-lg"
+              required
             />
           </label>
         </div>
@@ -56,6 +58,7 @@ const ContactDetails = () => {
               onChange={handleChange}
               type="email"
               className="p-3 border-gray-500 border w-full rounded-md text-lg"
+              required
             />
           </label>
         </div>

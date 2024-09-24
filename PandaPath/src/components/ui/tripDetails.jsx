@@ -40,7 +40,7 @@ const TripDetails = () => {
                   <ul className="space-y-2">
                     <li><strong>Region to Visit:</strong> {detail.region_to_visit}</li>
                     <li><strong>Travel Style:</strong> {detail.travel_style}</li>
-                    <li><strong>Interests:</strong> {detail.interests}</li>
+                    <li><strong>Interests:</strong> {detail.interest}</li>
                     <li><strong>Budget:</strong> {detail.budget}</li>
                     <li><strong>Date to Travel:</strong> {detail.date_to_travel}</li>
                     <li><strong>Trip Length:</strong> {detail.trip_length}</li>

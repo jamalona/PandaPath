@@ -14,6 +14,31 @@ const TripForm = () => {
   const { formData, setFormData } = useStepperContext();
   const navigate = useNavigate();
 
+  const initialFormData = {
+    
+      tripPreferences: {
+        regionToVisit: [],
+        travelStyle: "",
+        interest: [],
+      },
+      groupInfo: {
+        budget: 0,
+        startDate: "",
+        tripLength: 12,
+        adults: 1,
+        children: 0,
+        infants: 0,
+      },
+      contactDetails: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        countryCode: "",
+        phoneNumber: "",
+        additionalInfo: "",
+      },
+  }
+
 
   const steps = ["Trip preferences", "Group information", "Final details"];
 
@@ -61,24 +86,19 @@ const TripForm = () => {
 
     if (direction === "next") {
       if (!validateStep()) {
-
         alert("Please complete the current step before proceeding.");
         return;
       }
 
-      // If we're on the last step, submit the form
-      if (currentStep === steps.length) {
-        return;
-      } else {
+      if (currentStep < steps.length) {
         newStep++;
       }
     } else {
-
       newStep--;
     }
 
-    // Ensure the step is within the valid range
-    if (newStep > 0 && newStep <= steps.length+1) {
+    // Ensure newStep is valid
+    if (newStep > 0 && newStep <= steps.length) {
       setCurrentStep(newStep);
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
@@ -86,14 +106,12 @@ const TripForm = () => {
 
 
 
-
   const handleSubmit = async (e) => {
-    try {
-       e.preventDefault(); // 
+    e.preventDefault(); // Prevent default form submission behavior
 
-      if (currentStep === steps.length+1) {
+    if (currentStep === steps.length) {
+      try {
         console.log("Submitting form with data:", formData);
-
         const dataToInsert = getDataToInsert(formData);
 
         const { error } = await supabase.from('booking_form').insert([dataToInsert]);
@@ -101,12 +119,13 @@ const TripForm = () => {
         if (error) {
           console.error("Error inserting data:", error.message);
         } else {
-          navigate('/confirmation')
+          setFormData(initialFormData)
+          navigate('/confirmation');
           console.log("Data successfully inserted");
         }
+      } catch (err) {
+        console.error("An error occurred during form submission:", err.message);
       }
-    } catch (err) {
-      console.error("An error occurred during form submission:", err.message);
     }
   };
   return (
