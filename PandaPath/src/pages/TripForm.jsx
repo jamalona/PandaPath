@@ -124,6 +124,7 @@ const TripForm = () => {
       last_name: formData.contactDetails.lastName,
       email: formData.contactDetails.email,
       phone_number: formData.contactDetails.phoneNumber,
+      country: formData.contactDetails.countryCode,
       additional_information: formData.contactDetails.additionalInfo,
     };
 
