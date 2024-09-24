@@ -4,7 +4,7 @@ import { agents } from "../../data/agentsData";
 
 
 const Itinerary2cards = () => {
-  const secondAgent= agents[0]
+  const secondAgent= agents[1]
 
 
   return (

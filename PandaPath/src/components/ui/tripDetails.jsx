@@ -7,7 +7,7 @@ const TripDetails = () => {
     <>
       <div className="mt-28 text-center text-2xl">No booking requests made.</div>
 
-      <h2 className="text-3xl font-bold my-8 text-center">Your Trip Itinerary</h2>
+      <h2 className="text-3xl font-bold my-8 text-center">Your Request Details</h2>
 
       <div className="flex flex-wrap justify-center gap-6">
        

@@ -57,7 +57,7 @@ if (sessionStorage.getItem('token')){
           {agents.map((agent) => (
           <Route
             key={agent.id}
-            path={`/agent/${agent.id}`}
+            path={`/agents/${agent.id}`}
             element={<Agentcard {...agent} />}
           />
         ))}

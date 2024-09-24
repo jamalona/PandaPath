@@ -24,10 +24,7 @@ const ItenaryList = () => {
                 <div className='bg-white w-96 p-5 h-56 shadow-lg rounded-t-2xl absolute bottom-0 hover:h-60 transition-all duration-300 '>
                   <h2 className='text-xl w-80'>{itenary.title}</h2>
                   <p className='mt-5'>{itenary.days}</p>
-                  <p>{itenary.price}</p>
-
-                  
-                  
+                  <p>{itenary.price}</p>  
                 </div>
               </Link>
               <Link to="/tripform" onClick={handleLogoClick}>
