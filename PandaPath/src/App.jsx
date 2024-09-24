@@ -9,7 +9,6 @@ import Itinerary1 from './pages/Itinerary1';
 import Itinerary2 from './pages/Itinerary2';
 import LoginForm from './components/forms/LoginForm';
 import TripForm from './pages/TripForm';
-import ContactDetails from './components/forms/TripForm/ContactDetails';
 import SignUpForm from './components/forms/signUpForm';
 import AgentsPage from './pages/agentsPage';
 import RequestConfirmation from './pages/requestConfirmation'
@@ -50,7 +49,6 @@ if (sessionStorage.getItem('token')){
           <Route path="/agents" element={<AgentsPage />} />
           <Route path="/Expedition" element={<Itinerary1 />} />
           <Route path="/Guizhou" element={<Itinerary2 />} />
-          <Route path="/details" element={<ContactDetails />} />
           <Route path="/confirmation" element={<RequestConfirmation />} />
           <Route path="/yourtrip" element={<Yourtrip/>} />
         </Routes>

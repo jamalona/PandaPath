@@ -1,3 +1,6 @@
+
+
+
 export const itinerary = [
   {
     img: 2,
