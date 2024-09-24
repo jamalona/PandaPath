@@ -1,7 +1,10 @@
+import AgentList from "../components/ui/agentList"
+
 const AgentsPage = ()=>{
 return (
 <>
-<div>no agents</div>
+
+<AgentList/>
 </>
 )
 }

@@ -1,9 +1,18 @@
+import img1 from '../assets/images/village.png'
+import img2 from '../assets/images/GreatWallChina.jpg'
+import img3 from '../assets/images/tsokaSouth.jpg'
+import img4 from '../assets/images/china-Xian.jpg'
+import img5 from '../assets/images/xiandaming.webp'
+import img6 from '../assets/images/guilin.jpg'
+import img7 from '../assets/images/yellow-mountains.jpg'
+import img8 from '../assets/images/hongkong.jpg'
+import img9 from '../assets/images/ancient-town2.jpg'
 
 
 
 export const itinerary = [
   {
-    img: 2,
+    link: img1,
     location: "Guiyang",
     day: 1,
     title: "Arrive in Guiyang - Gateway to Guizhou",
@@ -12,7 +21,7 @@ export const itinerary = [
     hotels: "Guiyang Regal Hotel",
   },
   {
-    img: 3,
+    link: img2,
     location: "Guiyang - Kaili",
     day: 2,
     title: "Travel to Kaili - Meet the Miao People",
@@ -21,7 +30,7 @@ export const itinerary = [
     hotels: "Kaili Hotel",
   },
   {
-    img: 3,
+    link: img3,
     location: "Kaili - Langde - Rongjiang",
     day: 3,
     title: "Discover Langde and Datang Villages",
@@ -30,7 +39,7 @@ export const itinerary = [
     hotels: "Rongjiang Hotel",
   },
   {
-    img: 3,
+    link: img4,
     location: "Rongjiang - Congjiang - Zhaoxing",
     day: 4,
     title: "Venture to Zhaoxing, Home of the Dong People",
@@ -39,7 +48,7 @@ export const itinerary = [
     hotels: "Zhaoxing Hotel",
   },
   {
-    img: 3,
+    link: img5,
     location: "Zhaoxing - Sanjiang",
     day: 5,
     title: "Explore Chengyangqiao Dong Village",
@@ -48,7 +57,7 @@ export const itinerary = [
     hotels: "Sanjiang Hotel",
   },
   {
-    img: 3,
+    link:img6,
     location: "Sanjiang - Longsheng",
     day: 6,
     title: "Hike the Longji Terraced Fields",
@@ -57,7 +66,7 @@ export const itinerary = [
     hotels: "Longsheng Guesthouse",
   },
   {
-    img: 3,
+    link: img7,
     location: "Longsheng - Guilin",
     day: 7,
     title: "Discover the Scenic City of Guilin",
@@ -66,16 +75,16 @@ export const itinerary = [
     hotels: "Guilin Hotel",
   },
   {
-    img: 3,
-    location: "Guilin - Yangshuo",
+    link: img8,
+    location: "Hong Kong",
     day: 8,
-    title: "Li River Cruise to Yangshuo",
-    description: "Embark on a scenic Li River Cruise to Yangshuo. Marvel at the picturesque mountains and traditional villages along the riverbanks. Disembark in Yangshuo, where you can explore the ancient town or enjoy the famous Liu Sanjie light show in the evening.",
+    title: "Victoria Harbour Cruise & Explore Kowloon",
+    description: "Embark on a scenic cruise across Victoria Harbour, taking in the stunning skyline of Hong Kong Island and Kowloon. Marvel at the iconic skyscrapers and traditional junks sailing along the harbor. Afterward, explore the vibrant streets of Kowloon, including the bustling markets of Mong Kok and the peaceful Nan Lian Garden. In the evening, witness the dazzling Symphony of Lights show from the Tsim Sha Tsui promenade.",
     meals: ["Breakfast", "Lunch", "Dinner"],
-    hotels: "Yangshuo Mountain Retreat",
+    hotels: "The Peninsula Hong Kong",
   },
   {
-    img: 2,
+    link: img9,
     location: "Yangshuo - Guilin",
     day: 9,
     title: "Farewell Guilin",

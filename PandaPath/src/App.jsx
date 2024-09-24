@@ -12,6 +12,8 @@ import TripForm from './pages/TripForm';
 import SignUpForm from './components/forms/signUpForm';
 import AgentsPage from './pages/agentsPage';
 import RequestConfirmation from './pages/requestConfirmation'
+import Agentcard from './components/ui/agentcard';
+import { agents } from './data/agentsData';
 import { StepperProvider } from './contexts/StepperContext'; // Import the provider
 
 
@@ -51,6 +53,14 @@ if (sessionStorage.getItem('token')){
           <Route path="/Guizhou" element={<Itinerary2 />} />
           <Route path="/confirmation" element={<RequestConfirmation />} />
           <Route path="/yourtrip" element={<Yourtrip/>} />
+          
+          {agents.map((agent) => (
+          <Route
+            key={agent.id}
+            path={`/agent/${agent.id}`}
+            element={<Agentcard {...agent} />}
+          />
+        ))}
         </Routes>
         </div>
         <Footer />
