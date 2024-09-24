@@ -17,8 +17,8 @@ const SignUpForm = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = async () => {
-    // event.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     
     try {
       const { data, error } = await supabase.auth.signUp(

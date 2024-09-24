@@ -56,7 +56,7 @@ const TripForm = () => {
     }
   };
 
-  const handleClick = (direction) => {
+  const handleClick = async (direction) => {
     let newStep = currentStep;
 
     if (direction === "next") {
@@ -68,7 +68,6 @@ const TripForm = () => {
 
       // If we're on the last step, submit the form
       if (currentStep === steps.length) {
-        // handleSubmit();
         return;
       } else {
         newStep++;
@@ -79,7 +78,7 @@ const TripForm = () => {
     }
 
     // Ensure the step is within the valid range
-    if (newStep > 0 && newStep <= steps.length) {
+    if (newStep > 0 && newStep <= steps.length+1) {
       setCurrentStep(newStep);
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
@@ -90,9 +89,9 @@ const TripForm = () => {
 
   const handleSubmit = async (e) => {
     try {
-      if (e) e.preventDefault(); // Prevent default form submission
+       e.preventDefault(); // 
 
-      if (currentStep === steps.length) {
+      if (currentStep === steps.length+1) {
         console.log("Submitting form with data:", formData);
 
         const dataToInsert = getDataToInsert(formData);
@@ -114,8 +113,8 @@ const TripForm = () => {
     <>
       <div className="w-full bg-white">
         <form
-          onSubmit={handleSubmit}
-
+        onSubmit={handleSubmit} 
+          
           className="w-8/12 mx-auto  pt-10 pb-20 h-fit border shadow-xl">
           {/* Stepper navigation */}
           <Stepper steps={steps} currentStep={currentStep} />
