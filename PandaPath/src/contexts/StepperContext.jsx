@@ -29,7 +29,7 @@ export const StepperProvider = ({ children }) => {
       email: "",
       countryCode: "United Kingdom",
       phoneNumber: "07929843234",
-      additionalInfo: ` We’ll be traveling with our two kids, ages 7 and 10, so we’re looking for family-friendly activities throughout the trip. We’re hoping to visit major attractions but want to make sure there are places or activities that the kids will enjoy too. We’d prefer a relaxed pace with some downtime built in.`
+      additionalInfo: ` We’ll be traveling with our two kids, ages 7 and 10, so we’re looking for family-friendly activities throughout the trip. We’re hoping to visit major attractions but want to make sure there are places or activities that the kids will enjoy too. We’d prefer a relaxed pace with some downtime built in.` 
     },
   });
 
