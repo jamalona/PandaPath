@@ -19,17 +19,17 @@ export const StepperProvider = ({ children }) => {
       budget: 0,
       startDate: "",
       tripLength: 12,
-      adults: 1,
-      children: 0,
+      adults: 2,
+      children: 2,
       infants: 0,
     },
     contactDetails: {
-      firstName: "",
-      lastName: "",
+      firstName: "john",
+      lastName: "carter",
       email: "",
-      countryCode: "",
-      phoneNumber: "",
-      additionalInfo: "",
+      countryCode: "United Kingdom",
+      phoneNumber: "07929843234",
+      additionalInfo: ` We’ll be traveling with our two kids, ages 7 and 10, so we’re looking for family-friendly activities throughout the trip. We’re hoping to visit major attractions but want to make sure there are places or activities that the kids will enjoy too. We’d prefer a relaxed pace with some downtime built in.`
     },
   });
 
