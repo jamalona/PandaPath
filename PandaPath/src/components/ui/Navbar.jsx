@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Logo from '../../assets/images/PandaPathLogo.jpg';
 import { FaCircleUser } from "react-icons/fa6";
 import { SlArrowDown } from "react-icons/sl";

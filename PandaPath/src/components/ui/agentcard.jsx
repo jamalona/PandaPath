@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Agentcard = ({ name, title, description, email, phone, officeHours, image }) => {
   return (
-    <div className="fixed right-4 lg:right-16 top-56 mb-8 p-6 bg-gray-100 shadow-2xl rounded-md w-11/12 md:w-8/12 lg:w-4/12 h-auto md:h-[60vh]">
+    <div className="fixed right-4 lg:right-17 mb-16 top-40 p-6 bg-gray-100 shadow-2xl rounded-md w-11/12 md:w-8/12 lg:w-4/12  md:h-[75vh]">
       <h3 className="text-lg md:text-xl font-semibold mb-4 text-center lg:text-left">Your Travel Agent</h3>
       <img
         src={image}
@@ -27,8 +26,8 @@ const Agentcard = ({ name, title, description, email, phone, officeHours, image 
         </p>
       </div>
       <Link to="/tripform">
-        <button className='text-2xl absolute left-56 bottom-5 z-40 items-center  pl-5 pr-5 pt-1 pb-1
-               border-black border-2  rounded-lg hover:bg-slate-950 hover:text-white'>Request</button>
+        <button className='text-2xl absolute left-36 bottom-5 z-40 items-center  pl-5 pr-5 pt-1 pb-1
+               border-black border-2  rounded-lg hover:bg-slate-950 hover:text-white'>Request agent</button>
       </Link>
 
     </div>

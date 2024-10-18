@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef} from 'react';
 import { IoIosStar } from "react-icons/io";
 import reviewsData from '../../data/reviews.json'; 
 
@@ -12,7 +12,7 @@ const ReviewList = () => {
 
       <div
         ref={scrollRef}
-        className="flex items-center justify-start space-x-6 w-3/4 overflow-x-scroll ml-auto mr-auto h-72 no-scrollbar"
+        className="flex items-center justify-start space-x-6 w-10/12 overflow-x-scroll ml-auto mr-auto h-72 no-scrollbar"
       >
        
         {reviewsData.map((review, index) => (

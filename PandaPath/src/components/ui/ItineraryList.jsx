@@ -14,10 +14,10 @@ const ItenaryList = () => {
       <div className="w-screen ">
         <h1 className="text-4xl text-center pb-9 mt-6">Popular Itineraries</h1>
 
-        <div className='flex w-3/4 ml-auto mr-auto flex-wrap'>
+        <div className='flex w-10/12 mx-auto flex-wrap'>
           {Itineraries.map((itenary, index) => (
 
-            <div key={index} className='w-1/3 mb-10 relative h-450 group min-w-[31%] '>
+            <div key={index} className='w-1/3 mb-10 relative h-450 group min-w-[30%] '>
               <Link to={itenary.path} key={index} onClick={handleLogoClick}>
                 <img src={itenary.link} className=' w-96 h-60 -mb-8  transition-opacity duration-300 group-hover:opacity-70 rounded-t-md' />
                 {/* Text Container */}

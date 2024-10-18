@@ -7,7 +7,7 @@ const Itinerary1cards = () => {
   const firstAgent = agents[0];
   return (
     <>
-      <div className="w-9/12 mx-auto">
+      <div className="w-9/12 mx-auto  mb-16 ">
         <div className="flex">
 
           <div className="w-8/12">
