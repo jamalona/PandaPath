@@ -23,13 +23,15 @@ Welcome to **PandaPath**, the ultimate travel platform that connects users with 
 
 ### Frontend
 - **React.js** – for building a dynamic, user-friendly interface.
+- **Vite** – For fast development and build tooling
 - **Tailwind CSS** – for responsive and modern UI design.
 
 ### Backend
-- **Supabase** – for database and authentication.
+- **Node.js** – For server-side logic and API handling
+- **Supabase (PostgreSQL)** – Managed database solution for storing user data, itineraries, and agents
 
-### Database
-- **PostgreSQL** – for storing itineraries, agent profiles, reviews, and user data.
+### Email
+- **EmailJS** – Used to handle email submissions directly from the front end without a custom backend.
 
 ---
 
@@ -37,8 +39,8 @@ Welcome to **PandaPath**, the ultimate travel platform that connects users with 
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/pandapath.git
-    cd Pandapath
+    git clone https://github.com/jamalona/PandaPath.git
+    cd PandaPath
     ```
 
 2. **Install dependencies:**
@@ -51,3 +53,6 @@ Welcome to **PandaPath**, the ultimate travel platform that connects users with 
    ```env
    SUPABASE_URL=your_supabase_url
    SUPABASE_KEY=your_supabase_api_key
+
+4. **Run the development server:**
+   npm run dev
