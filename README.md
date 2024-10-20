@@ -55,4 +55,6 @@ Welcome to **PandaPath**, the ultimate travel platform that connects users with 
    SUPABASE_KEY=your_supabase_api_key
 
 4. **Run the development server:**
+    ```
    npm run dev
+    ```
