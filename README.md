@@ -1,6 +1,3 @@
-# PandaPath
-Trip planner
-
 # PandaPath - Your Gateway to Unforgettable Journeys Across China
 
 Welcome to **PandaPath**, the ultimate travel platform that connects users with experienced travel consultants and curated travel itineraries across China. Whether you're seeking luxury tours, adventure trips, or cultural explorations, PandaPath offers personalized itineraries to make your journey extraordinary.
